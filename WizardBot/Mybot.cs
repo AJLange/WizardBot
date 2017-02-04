@@ -15,12 +15,29 @@ namespace Microsoft.Bot.MyBot
     public enum Backgroundtype
     { Acolyte, Charlatan, Criminal, Entertainer, Folk_Hero, Guild_Artisan, Hermit, Noble, Outlander, Sage, Sailor, Soldier, Urchin };
 
+    public enum Alignmenttype
+    { Lawful_Good, Neutral_Good, Chaotic_Good, Lawful_Neutral, True_Neutral, Chaotic_Neutral, Lawful_Evil, Neutral_Evil, Chaotic_Evil };
+
+
     [Serializable]
     public class DnDBot
     {
         public Racetype? MyRace;
         public Classtype? MyClass;
         public Backgroundtype? MyBackground;
+        [Numeric(3, 18)]
+        public double? Strength;
+        [Numeric(3, 18)]
+        public double? Dexterity;
+        [Numeric(3, 18)]
+        public double? Constitution;
+        [Numeric(3, 18)]
+        public double? Intelligence;
+        [Numeric(3, 18)]
+        public double? Wisdom;
+        [Numeric(3, 18)]
+        public double? Charisma;
+        public Alignmenttype? MyAlignment;
 
         public static IForm<DnDBot> BuildForm()
         {
