@@ -1,0 +1,39 @@
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Bot Application1.dll.config
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Bot Application1.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Bot Application1.pdb
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Autofac.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Chronic.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.Bot.Builder.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.Bot.Connector.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Newtonsoft.Json.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.Net.Http.Formatting.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.Web.Http.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.Web.Http.WebHost.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Autofac.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.Bot.Builder.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.Bot.Connector.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\Newtonsoft.Json.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.Net.Http.Formatting.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.Web.Http.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\System.Web.Http.WebHost.xml
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\obj\Debug\WizardBot.csprojResolveAssemblyReference.cache
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\obj\Debug\Bot Application1.dll
+C:\Users\amlange\Documents\GitHub\wizardBot\WizardBot\WizardBot\obj\Debug\Bot Application1.pdb
