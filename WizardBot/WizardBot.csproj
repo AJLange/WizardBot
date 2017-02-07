@@ -124,6 +124,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mybot.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="PlayerCharcter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

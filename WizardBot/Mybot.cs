@@ -22,8 +22,11 @@ namespace Microsoft.Bot.MyBot
     [Serializable]
     public class DnDBot
     {
+        [Prompt("What Race would you like, select one.{||}")]
         public Racetype? MyRace;
+        [Prompt("Please select a class for your {&} {||}")]
         public Classtype? MyClass;
+        [Prompt("Please a Background {&} {||}")]
         public Backgroundtype? MyBackground;
         [Numeric(3, 18)]
         public double? Strength;
