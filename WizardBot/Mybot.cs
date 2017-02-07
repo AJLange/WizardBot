@@ -18,16 +18,22 @@ namespace Microsoft.Bot.MyBot
     public enum Alignmenttype
     { Lawful_Good, Neutral_Good, Chaotic_Good, Lawful_Neutral, True_Neutral, Chaotic_Neutral, Lawful_Evil, Neutral_Evil, Chaotic_Evil };
 
+    public enum AttrtypeSelection
+    { Random, Standard_Array, Point_buy }
 
     [Serializable]
     public class DnDBot
     {
-        [Prompt("What Race would you like, select one.{||}")]
+        [Prompt("What race do you want your character to be? {||}")]
         public Racetype? MyRace;
-        [Prompt("Please select a class for your {&} {||}")]
+        [Prompt("Select a class for your {&} {||}")]
         public Classtype? MyClass;
-        [Prompt("Please a Background {&} {||}")]
+        [Prompt("Choose a Background {&} {||}")]
         public Backgroundtype? MyBackground;
+        [Prompt("Do you want to roll attributes randomly (1), choose from the standard array (2), or choose a custom point buy (3)?")]
+        public AttrtypeSelection? MyAttrtype;
+        //if(MyAttrtype == 1 ) {
+
         [Numeric(3, 18)]
         public double? Strength;
         [Numeric(3, 18)]
