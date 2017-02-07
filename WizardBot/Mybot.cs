@@ -1,6 +1,7 @@
 ﻿using Microsoft.Bot.Builder.FormFlow;
 using System;
 using System.Collections.Generic;
+using WizardBot;
 #pragma warning disable 649
 
 
@@ -26,7 +27,8 @@ namespace Microsoft.Bot.MyBot
     {
         [Prompt("What race do you want your character to be? {||}")]
         public Racetype? MyRace;
-        [Prompt("Select a class for your {&} {||}")]
+        //AddPlayerValue("MyRace", { MyRace});
+        [Prompt("Great choice, {MyRace}. Select a class for your {&} {||}")]
         public Classtype? MyClass;
         [Prompt("Choose a Background {&} {||}")]
         public Backgroundtype? MyBackground;
@@ -53,6 +55,12 @@ namespace Microsoft.Bot.MyBot
             return new FormBuilder<DnDBot>()
                     .Message("Welcome to the DnD Bot.")
                     .Build();
+        }
+
+        public static void AddPlayerValue(string key, string value)
+        {
+            if (key == "MyRace")
+                PlayerCharcter.MyRace = value;
         }
     };
 }

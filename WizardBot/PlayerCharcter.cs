@@ -30,15 +30,15 @@ namespace WizardBot
 
     }
 
-    public class PlayerCharcter
+    public static class PlayerCharcter
     {
-        public string MyRace { get; set; }
-        public string MyClass { get; set; }
-        public string MyAlignment { get; set; }
-        public string MyBackground { get; set; }
-        public PlayerAttributeDictionary MyAttributes { get; set; }
-        public List<string> MySpells { get; set; }
-        public List<string> MyGear { get; set; }
-        public string MyName { get; set; }
+        public static string MyRace { get; set; }
+        public static string MyClass { get; set; }
+        public static string MyAlignment { get; set; }
+        public static string MyBackground { get; set; }
+        public static PlayerAttributeDictionary MyAttributes { get; set; }
+        public static List<string> MySpells { get; set; }
+        public static List<string> MyGear { get; set; }
+        public static string MyName { get; set; }
     }
 }
