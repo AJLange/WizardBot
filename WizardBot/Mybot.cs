@@ -1,6 +1,15 @@
-﻿using Microsoft.Bot.Builder.FormFlow;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.FormFlow;
+using Microsoft.Bot.Builder.FormFlow.Advanced;
+using Newtonsoft.Json.Linq;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
 using WizardBot;
 #pragma warning disable 649
 
@@ -20,22 +29,53 @@ namespace Microsoft.Bot.MyBot
     { Lawful_Good, Neutral_Good, Chaotic_Good, Lawful_Neutral, True_Neutral, Chaotic_Neutral, Lawful_Evil, Neutral_Evil, Chaotic_Evil };
 
     public enum AttrtypeSelection
-    { Random, Standard_Array, Point_buy }
+    { Random, Standard_Array, Point_Buy }
+
+
+    public enum SpellSelection
+
+    {
+
+        // This starts at 1 because 0 is the "no value" value
+
+        //[Terms("except", "but", "not", "no", "all", "everything")]
+
+        //Everything = 1,
+
+        //this needs to be adjusted. You only get 3 spells. Or however many your stat allows?
+
+        Alarm, Burning_Hands, Charm_Person, Color_Spray, Comprehend_Languages, Detect_Magic, Disguise_Self, Expeditious_Retreat,
+False_Life, Feather_Fall, Find_Familiar, Floating_Disk, Fog_Cloud, Grease, Hideous_Laughter, Identify,
+Illusory_Script, Jump, Longstrider, Mage_Armor, Magic_Missile, Protection_from_Evil_and_Good, Shield, Silent_Image, Sleep, Thunderwave, Unseen_Servant
+
+    };
+
+    public enum GearSelection
+
+    {
+        // This is just some trash as a placeholder for a proper gear selection menu.
+
+      Weapon, Armor, Torch, Lockpicking_Kit, Disguise_Kit, War_Horse
+
+    };
+
+
 
     [Serializable]
     public class DnDBot
     {
         [Prompt("What race do you want your character to be? {||}")]
         public Racetype? MyRace;
-        //AddPlayerValue("MyRace", { MyRace});
-        [Prompt("Great choice, {MyRace}. Select a class for your {&} {||}")]
-        public Classtype? MyClass;
-        [Prompt("Choose a Background {&} {||}")]
-        public Backgroundtype? MyBackground;
-        [Prompt("Do you want to roll attributes randomly (1), choose from the standard array (2), or choose a custom point buy (3)?")]
-        public AttrtypeSelection? MyAttrtype;
-        //if(MyAttrtype == 1 ) {
 
+        [Prompt("Great choice, {MyRace}. Now, select a class for your character. {||}")]
+        public Classtype? MyClass;
+        [Prompt("Next, choose a background. {||}")]
+        public Backgroundtype? MyBackground;
+        [Prompt("Do you want to roll attributes randomly (1), choose from the standard array (2), or choose a custom point buy (3)? {||}")]
+        public AttrtypeSelection? MyAttrtype;
+        //I need to do the switch case here.
+        //screw this until I actually need it - it's tedious to test
+        /*
         [Numeric(3, 18)]
         public double? Strength;
         [Numeric(3, 18)]
@@ -47,20 +87,55 @@ namespace Microsoft.Bot.MyBot
         [Numeric(3, 18)]
         public double? Wisdom;
         [Numeric(3, 18)]
-        public double? Charisma;
+        public double? Charisma; */
+
         public Alignmenttype? MyAlignment;
+
+        [Prompt("Members of the {MyClass} class can choose from the following spells. Please choose three. Put commas between your choices. {||}")]
+        public List<SpellSelection> MySpells { get; set; }
+
+        [Prompt("Please select your starting gear. {||}")]
+        public List<GearSelection> MyGear { get; set; }
 
         public static IForm<DnDBot> BuildForm()
         {
-            return new FormBuilder<DnDBot>()
-                    .Message("Welcome to the DnD Bot.")
-                    .Build();
-        }
 
+
+            return new FormBuilder<DnDBot>()
+                    .Message("Welcome to the DnD Bot. This bot will walk you through the process of building a DnD character.")
+
+                    /*
+                     * //Advanced bot stuff. for now it just slows it down
+                                     .Field(nameof(MyRace))
+                                     .Field(nameof(MyClass))
+                                     .Field(nameof(MyBackground))
+                                     .Field(nameof(MyAttrtype))
+               .Field(new FieldReflector<DnDBot>(nameof(MySpells))
+
+                                          .SetType(null)
+                                          .SetActive((state) => state.MyClass == Classtype.Wizard)
+                                          .SetDefine(async (state, field) =>
+
+                                          {
+
+                                              field
+                                                  .AddDescription("cookie", "Free cookie")
+                                                  .AddTerms("cookie", "cookie", "free cookie")
+                                                  .AddDescription("drink", "Free large drink")
+                                                  .AddTerms("drink", "drink", "free drink");
+
+                                              return true;
+
+                                          }))
+
+                          */
+                    .Build();
+        } 
+/*
         public static void AddPlayerValue(string key, string value)
         {
             if (key == "MyRace")
                 PlayerCharcter.MyRace = value;
-        }
+        } */
     };
 }
