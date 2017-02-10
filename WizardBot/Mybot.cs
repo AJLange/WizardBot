@@ -91,8 +91,9 @@ Illusory_Script, Jump, Longstrider, Mage_Armor, Magic_Missile, Protection_from_E
 
         public Alignmenttype? MyAlignment;
 
+        [Optional]
         [Prompt("Members of the {MyClass} class can choose from the following spells. Please choose three. Put commas between your choices. {||}")]
-        public List<SpellSelection> MySpells { get; set; }
+         public List<SpellSelection> MySpells { get; set; }
 
         [Prompt("Please select your starting gear. {||}")]
         public List<GearSelection> MyGear { get; set; }
@@ -100,35 +101,62 @@ Illusory_Script, Jump, Longstrider, Mage_Armor, Magic_Missile, Protection_from_E
         public static IForm<DnDBot> BuildForm()
         {
 
+            OnCompletionAsyncDelegate<DnDBot> processOrder = async (context, state) =>
+
+            {
+
+                await context.PostAsync("Goodbye!");
+
+            };
 
             return new FormBuilder<DnDBot>()
                     .Message("Welcome to the DnD Bot. This bot will walk you through the process of building a DnD character.")
 
-                    /*
-                     * //Advanced bot stuff. for now it just slows it down
+
+                                     //Advanced bot stuff. It's a bit slow.
+
                                      .Field(nameof(MyRace))
                                      .Field(nameof(MyClass))
                                      .Field(nameof(MyBackground))
                                      .Field(nameof(MyAttrtype))
-               .Field(new FieldReflector<DnDBot>(nameof(MySpells))
+                                     .Field(nameof(MyAlignment))
+                                     .Field(nameof(MySpells))
 
-                                          .SetType(null)
-                                          .SetActive((state) => state.MyClass == Classtype.Wizard)
-                                          .SetDefine(async (state, field) =>
+                                     /*  .Field(new FieldReflector<DnDBot>(nameof(MySpells))
+                         .SetType(null)
+                         .SetActive((state) => state.MyClass == Classtype.Wizard)
+                         .SetDefine(async (state, field) =>
+                         {
+                             field
+                                 .AddDescription("Magic Missile", "Magic Missile")
+                                 .AddTerms("Magic missile", "Magic Missile")
+                                 .AddDescription("Floating Disc", "Floating Disc")
+                                 .AddTerms("Disc", "floating", "floating disc");
+                             return true;
+                         }))
 
-                                          {
+                  .SetActive((state) => state.MyClass == Classtype.Druid)
+                         .SetDefine(async (state, field) =>
+                         {
+                             field
+                                 .AddDescription("Animal Friendship", "Animal Friendship")
+                                 .AddTerms("Animal Friendship", "Animal Friendship")
+                                 .AddDescription("Cure Wounds", "Cure Wounds")
+                                 .AddTerms("cure", "wounds", "cure wounds");
+                             return true;
+                         })) */
 
-                                              field
-                                                  .AddDescription("cookie", "Free cookie")
-                                                  .AddTerms("cookie", "cookie", "free cookie")
-                                                  .AddDescription("drink", "Free large drink")
-                                                  .AddTerms("drink", "drink", "free drink");
 
-                                              return true;
+                                   
+                                     .Field(nameof(MyGear))
 
-                                          }))
+                        .Confirm("Your character is a {MyRace} {MyClass} who was once a {MyBackground} and is {MyAlignment}. You have the following spells: {MySpells} and the following gear: {MyGear}. Sound good?")
+                        .AddRemainingFields()
+                        .Message("Thanks for making a D&D character!")
+                        .OnCompletion(processOrder)
 
-                          */
+
+
                     .Build();
         } 
 /*
