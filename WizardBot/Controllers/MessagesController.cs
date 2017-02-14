@@ -9,13 +9,14 @@ using System.Diagnostics;
 using System.Net;
 using WizardBot;
 
+
 namespace Microsoft.Bot.MyBot
 {
     [BotAuthentication]
 
     public class MessagesController : ApiController
     {
-        /*
+        
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -70,7 +71,7 @@ namespace Microsoft.Bot.MyBot
             return null;
         }
 
-        */
+        
         
         internal static IDialog<DnDBot> MakeRootDialog()
         {
@@ -87,36 +88,37 @@ namespace Microsoft.Bot.MyBot
         /// </summary>
 
         /// <param name="activity"></param>
+        /*
+ [ResponseType(typeof(void))]
 
-        [ResponseType(typeof(void))]
+ public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
+ {
 
-        public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
-        {
+     if (activity != null)
+     {
 
-            if (activity != null)
-            {
+         // one of these will have an interface and process it
 
-                // one of these will have an interface and process it
+         switch (activity.GetActivityType())
+         {
 
-                switch (activity.GetActivityType())
-                {
+             case ActivityTypes.Message:
+                 await Conversation.SendAsync(activity, MakeRootDialog);
+                 break;
 
-                    case ActivityTypes.Message:
-                        await Conversation.SendAsync(activity, MakeRootDialog);
-                        break;
+             case ActivityTypes.ConversationUpdate:
+             case ActivityTypes.ContactRelationUpdate:
+             case ActivityTypes.Typing:
+             case ActivityTypes.DeleteUserData:
+             default:
+                 Trace.TraceError($"Unknown activity type ignored: {activity.GetActivityType()}");
+                 break;
+         }
+     }
 
-                    case ActivityTypes.ConversationUpdate:
-                    case ActivityTypes.ContactRelationUpdate:
-                    case ActivityTypes.Typing:
-                    case ActivityTypes.DeleteUserData:
-                    default:
-                        Trace.TraceError($"Unknown activity type ignored: {activity.GetActivityType()}");
-                        break;
-                }
-            }
-
-            return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
-        }
-        
+     return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
+ }
+  */
     }
+
 }

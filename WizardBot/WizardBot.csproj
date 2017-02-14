@@ -120,11 +120,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\ChoicesDialog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mybot.cs" />
-    <Compile Include="NewPlayerDialogs.cs" />
+    <Compile Include="Dialogs\NewPlayerDialogs.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="PlayerCharcter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
