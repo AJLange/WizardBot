@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ClassesJSON" xml:space="preserve">
+    <value>{
+  "Class":[
+    {
+    "Name":"Barbarian",
+    "Description":"A fierce warrior of primitive background who can enter a battle rage. ",
+    "PicLink":"",
+    "MoreInfoLink":"",
+    "Proficiencies":{
+      "Armor":"Light armor, medium armor, shields",
+      "Weapons":"Simple weapons, martial weapons",
+      "Tools":"None",
+      "Saving Throws":"Strength, Constitution",
+      "Skills":"Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+    },
+    "Pros":"",
+    "Cons":""
+    },
+    {
+      "Name": "Bard",
+      "Description": "An inspiring magician whose power echoes the music of creation.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Cleric",
+      "Description": "A priest of the Old Faith, wielding the powers of nature – moonlight and plant growth, fire and lightning – and adopting the forms of animals.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Druid",
+      "Description": "A priest of the Old Faith, wielding the powers of nature – moonlight and plant growth, fire and lightning – and adopting the forms of animals.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Fighter",
+      "Description": "A master of martial combat, skilled with a variety of weapons and armor.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Monk",
+      "Description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Paladin",
+      "Description": "A holy warrior bound to a sacred oath.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Ranger",
+      "Description": "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Rouge",
+      "Description": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+    "Name":"Sorcerer",
+    "Description":"A spellcaster who draws on inherent magic from a gift or bloodline.",
+    "PicLink":"",
+    "MoreInfoLink":"",
+    "Proficiencies":{      
+      "Armor":"None",
+      "Weapons":"Daggers, darts, slings, quarterstaffs, lightcrossbows",
+      "Tools":"None",
+      "Saving Throws":"Constitution, Charisma",
+      "Skills":"Choose two from Arcana, Deception, Insight, Intimidation, Persuation, and Religon"
+    },
+    "Pros":"",
+    "Cons":""
+    },
+    {
+      "Name": "Warlock",
+      "Description": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Wizard",
+      "Description": "A scholarly magic-user capable of manipulating the structures of reality.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    }
+  ]
+}</value>
+  </data>
+  <data name="RacesJSON" xml:space="preserve">
+    <value>{
+"Race": [
+{
+  "Name": "Human",
+  "Description": "Humans are the most adaptable and ambitious people among the common races. They have widely varying tastes, morals, and customs in the many different lands where they have settled. When they settle, though, they stay: they build cities to last for the ages, and great kingdoms that can persist for long centuries. An individual human might have a relatively short life span, but a human nation or culture preserves traditions with origins far beyond the reach of any single human’s memory. They live fully in the present—making them well suited to the adventuring life—but also plan for the future, striving to leave a lasting legacy. Individually and as a group, humans are adaptable opportunists, and they stay alert to changing political and social dynamics.",
+  "PicLink" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Human.png",
+  "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/human",
+  "Traits": {
+    "Ability Score Increase" : "Your ability scores each increase by 1",
+    "Alignment" : "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+    "Size" : "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+    "Speed" : "Your base walking speed is 30 feet",
+    "Languages" : "You can speak, read, and write Common and one extra language of your choice."
+  },
+  "Pros": "Pros",
+  "Cons" : "Cons"
+},
+  {
+    "Name": "Elf",
+    "Description": "Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.They are more often amused than excited, and more likely to be curious than greedy. They tend to remain aloof and unfazed by petty happenstance. When pursuing a goal, however, whether adventuring on a mission or learning a new skill or art, elves can be focused and relentless. They are slow to make friends and enemies, and even slower to forget them. They reply to petty insults with disdain and to serious insults with vengeance.",
+    "PicLink": "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Elf.png",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/elf",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+{
+  "Name": "Dwarf",
+  "Description": "Dwarves respect the traditions of their clans, tracing their ancestry back to the founding of their most ancient strongholds in the youth of the world, and do not abandon those traditions lightly. Part of those traditions is devotion to the gods of the dwarves, who uphold the dwarven ideals of industrious labor, skill in battle, and devotion to the forge. Dwarves who take up the adventuring life might be motivated by a desire for treasure—for its own sake, for a specific purpose, or even out of an altruistic desire to help others. Other dwarves are driven by the command or inspiration of a deity, a direct calling or simply a desire to bring glory to one of the dwarf gods. Clan and ancestry are also important motivators. A dwarf might seek to restore a clan’s lost honor, avenge an ancient wrong his or her clan suffered, or earn a new place within the clan after having been exiled. Or a dwarf might search for the axe wielded by a mighty ancestor, lost on the field of battle centuries ago.",
+  "PicLink" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Dwarf.png",
+  "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/dwarf",
+  "Traits": {
+    "Ability Score Increase" : "Your Consitution score increase by 2",
+    "Alignment" : "",
+    "Size" : "",
+    "Tool Proficiency" : "",
+    "Darkvision" : "",
+    "Speed" : "",
+    "Language" : ""
+  },
+  "Pros": "Pros",
+  "Cons" : "Cons"
+},
+  {
+    "Name": "Halfling",
+    "Description": "Halflings are an affable and cheerful people. They cherish the bonds of family and friendship as well as the comforts of hearth and home, harboring few dreams of gold or glory. Even adventurers among them usually venture into the world for reasons of community, friendship, wanderlust, or curiosity. They love discovering new things, even simple things, such as an exotic food or an unfamiliar style of clothing. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along an old dirt road.",
+    "PicLink": "http://dnd.wizards.com/sites/default/files/media/styles/mosaic_thumbnail/public/images/mosaic/Race_Halfling.jpg?itok=0XZ3ue2I",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/halfling",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+  {
+    "Name": "Dragonborn",
+    "Description": "",
+    "PicLink": "",
+    "MoreInfoLink": "",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+  {
+    "Name": "Gnome",
+    "Description": "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities. Louder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts of laughter. Though gnomes love jokes of all kinds, particularly puns and pranks, they’re just as dedicated to the more serious tasks they undertake. Many gnomes are skilled engineers, alchemists, tinkers, and inventors. They’re willing to make mistakes and laugh at themselves in the process of perfecting what they do, taking bold (sometimes foolhardy) risks and dreaming large.",
+    "PicLink": "http://dnd.wizards.com/sites/default/files/media/styles/mosaic_thumbnail/public/images/mosaic/NEW_TO_DD_Races_Gnome_T_140527.jpg?itok=K0yK7uq3",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/gnome",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+{
+  "Name": "Half-Elf",
+  "Description": "",
+  "PicLink" : "",
+  "MoreInfoLink": "",
+  "Traits":"",
+  "Pros": "Pros",
+  "Cons" : "Cons"
+},
+  {
+    "Name": "Half-Orc",
+    "Description": "Some half-orcs are proud chiefs of orc tribes, whose human blood gives them an edge over their full-blooded orc rivals. Some are children of the frontiers, in places where orcs and human barbarians live in uneasy balance, fighting in some seasons and trading in others. Some are desperate outcasts doing whatever it takes to get by in a world that shuns them, making a living by strength and violence. And some half-orcs are adventurers, finding a home and a family like none they’ve ever known among people who don’t care about their ancestry, only about their valor and loyalty",
+    "PicLink": "http://dnd.wizards.com/sites/default/files/media/styles/mosaic_thumbnail/public/images/mosaic/NEW_TO_DD_Races_HalfOrc_T_140722.jpg?itok=FG_WDcX9",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/halforc",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+  {
+    "Name": "Tiefling",
+    "Description": "",
+    "PicLink": "",
+    "MoreInfoLink": "",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  }
+]
+}</value>
+  </data>
+</root>

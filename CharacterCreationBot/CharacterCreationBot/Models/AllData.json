@@ -1,0 +1,26 @@
+﻿{
+"Race": [
+{
+  "Name": "Human",
+  "Description": "what",
+  "Pic" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Human.png"
+},
+{
+    "Name": "Elf",
+  "Description": "what",
+  "Pic" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Elf.png"
+}
+],
+"Class":[
+  {
+      "Name": "Ranger",
+  "Description": "what",
+  "Pic" : "https://www.google.com/search?q=Human+D%26D&espv=2&biw=1254&bih=882&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjKw87R9qTSAhVX4mMKHSvsDXIQ_AUIBigB&dpr=1#tbm=isch&q=Elf+D%26D&imgrc=7U_BZynQvfS5DM:"
+  },
+  {
+    "Name": "Rouge",
+  "Description": "what",
+  "Pic" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Human.png"
+  }
+  ]
+}

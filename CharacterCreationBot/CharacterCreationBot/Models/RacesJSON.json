@@ -1,0 +1,133 @@
+﻿{
+"Race": [
+{
+  "Name": "Human",
+  "Description": "Humans are the most adaptable and ambitious people among the common races. They have widely varying tastes, morals, and customs in the many different lands where they have settled. When they settle, though, they stay: they build cities to last for the ages, and great kingdoms that can persist for long centuries. An individual human might have a relatively short life span, but a human nation or culture preserves traditions with origins far beyond the reach of any single human’s memory. They live fully in the present—making them well suited to the adventuring life—but also plan for the future, striving to leave a lasting legacy. Individually and as a group, humans are adaptable opportunists, and they stay alert to changing political and social dynamics.",
+  "PicLink" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Human.png",
+  "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/human",
+  "Traits": {
+    "Ability Score Increase" : "Your ability scores each increase by 1",
+    "Alignment" : "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+    "Size" : "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+    "Speed" : "Your base walking speed is 30 feet",
+    "Languages" : "You can speak, read, and write Common and one extra language of your choice."
+  },
+  "Pros": "Pros",
+  "Cons" : "Cons"
+},
+  {
+    "Name": "Elf",
+    "Description": "Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.They are more often amused than excited, and more likely to be curious than greedy. They tend to remain aloof and unfazed by petty happenstance. When pursuing a goal, however, whether adventuring on a mission or learning a new skill or art, elves can be focused and relentless. They are slow to make friends and enemies, and even slower to forget them. They reply to petty insults with disdain and to serious insults with vengeance.",
+    "PicLink": "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Elf.png",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/elf",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+{
+  "Name": "Dwarf",
+  "Description": "Dwarves respect the traditions of their clans, tracing their ancestry back to the founding of their most ancient strongholds in the youth of the world, and do not abandon those traditions lightly. Part of those traditions is devotion to the gods of the dwarves, who uphold the dwarven ideals of industrious labor, skill in battle, and devotion to the forge. Dwarves who take up the adventuring life might be motivated by a desire for treasure—for its own sake, for a specific purpose, or even out of an altruistic desire to help others. Other dwarves are driven by the command or inspiration of a deity, a direct calling or simply a desire to bring glory to one of the dwarf gods. Clan and ancestry are also important motivators. A dwarf might seek to restore a clan’s lost honor, avenge an ancient wrong his or her clan suffered, or earn a new place within the clan after having been exiled. Or a dwarf might search for the axe wielded by a mighty ancestor, lost on the field of battle centuries ago.",
+  "PicLink" : "http://media.wizards.com/images/dnd/newtodnd/NEW_TO_DD_Races_Dwarf.png",
+  "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/dwarf",
+  "Traits": {
+    "Ability Score Increase" : "Your Consitution score increase by 2",
+    "Alignment" : "",
+    "Size" : "",
+    "Speed" : "",
+    "Language" : ""
+  },
+  "Pros": "Pros",
+  "Cons" : "Cons"
+},
+  {
+    "Name": "Halfling",
+    "Description": "Halflings are an affable and cheerful people. They cherish the bonds of family and friendship as well as the comforts of hearth and home, harboring few dreams of gold or glory. Even adventurers among them usually venture into the world for reasons of community, friendship, wanderlust, or curiosity. They love discovering new things, even simple things, such as an exotic food or an unfamiliar style of clothing. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along an old dirt road.",
+    "PicLink": "http://dnd.wizards.com/sites/default/files/media/styles/mosaic_thumbnail/public/images/mosaic/Race_Halfling.jpg?itok=0XZ3ue2I",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/halfling",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+  {
+    "Name": "Dragonborn",
+    "Description": "",
+    "PicLink": "",
+    "MoreInfoLink": "",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+  {
+    "Name": "Gnome",
+    "Description": "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities. Louder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts of laughter. Though gnomes love jokes of all kinds, particularly puns and pranks, they’re just as dedicated to the more serious tasks they undertake. Many gnomes are skilled engineers, alchemists, tinkers, and inventors. They’re willing to make mistakes and laugh at themselves in the process of perfecting what they do, taking bold (sometimes foolhardy) risks and dreaming large.",
+    "PicLink": "http://dnd.wizards.com/sites/default/files/media/styles/mosaic_thumbnail/public/images/mosaic/NEW_TO_DD_Races_Gnome_T_140527.jpg?itok=K0yK7uq3",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/gnome",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+{
+  "Name": "Half-Elf",
+  "Description": "",
+  "PicLink" : "",
+  "MoreInfoLink": "",
+  "Traits":"",
+  "Pros": "Pros",
+  "Cons" : "Cons"
+},
+  {
+    "Name": "Half-Orc",
+    "Description": "Some half-orcs are proud chiefs of orc tribes, whose human blood gives them an edge over their full-blooded orc rivals. Some are children of the frontiers, in places where orcs and human barbarians live in uneasy balance, fighting in some seasons and trading in others. Some are desperate outcasts doing whatever it takes to get by in a world that shuns them, making a living by strength and violence. And some half-orcs are adventurers, finding a home and a family like none they’ve ever known among people who don’t care about their ancestry, only about their valor and loyalty",
+    "PicLink": "http://dnd.wizards.com/sites/default/files/media/styles/mosaic_thumbnail/public/images/mosaic/NEW_TO_DD_Races_HalfOrc_T_140722.jpg?itok=FG_WDcX9",
+    "MoreInfoLink": "http://dnd.wizards.com/dungeons-and-dragons/what-is-dnd/races/halforc",
+    "Traits": {
+      "Ability Score Increase: Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  },
+  {
+    "Name": "Tiefling",
+    "Description": "",
+    "PicLink": "",
+    "MoreInfoLink": "",
+    "Traits": {
+      "Ability Score Increase": "Your ability scores each increase by 1",
+      "Alignment": "Humans tend toward no particular alignment. The best and the worst are found amoung them.",
+      "Size": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+      "Speed": "Your base walking speed is 30 feet",
+      "Languages": "You can speak, read, and write Common and one extra language of your choice."
+    },
+    "Pros": "Pros",
+    "Cons": "Cons"
+  }
+]
+}

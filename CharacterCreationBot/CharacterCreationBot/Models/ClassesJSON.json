@@ -1,0 +1,184 @@
+﻿{
+  "Class":[
+    {
+    "Name":"Barbarian",
+    "Description":"A fierce warrior of primitive background who can enter a battle rage. ",
+    "PicLink":"",
+    "MoreInfoLink":"",
+    "Proficiencies":{
+      "Armor":"Light armor, medium armor, shields",
+      "Weapons":"Simple weapons, martial weapons",
+      "Tools":"None",
+      "Saving Throws":"Strength, Constitution",
+      "Skills":"Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+    },
+    "Pros":"",
+    "Cons":""
+    },
+    {
+      "Name": "Bard",
+      "Description": "An inspiring magician whose power echoes the music of creation.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Cleric",
+      "Description": "A priest of the Old Faith, wielding the powers of nature – moonlight and plant growth, fire and lightning – and adopting the forms of animals.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Druid",
+      "Description": "A priest of the Old Faith, wielding the powers of nature – moonlight and plant growth, fire and lightning – and adopting the forms of animals.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Fighter",
+      "Description": "A master of martial combat, skilled with a variety of weapons and armor.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Monk",
+      "Description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Paladin",
+      "Description": "A holy warrior bound to a sacred oath.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Ranger",
+      "Description": "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Rouge",
+      "Description": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+    "Name":"Sorcerer",
+    "Description":"A spellcaster who draws on inherent magic from a gift or bloodline.",
+    "PicLink":"",
+    "MoreInfoLink":"",
+    "Proficiencies":{      
+      "Armor":"None",
+      "Weapons":"Daggers, darts, slings, quarterstaffs, lightcrossbows",
+      "Tools":"None",
+      "Saving Throws":"Constitution, Charisma",
+      "Skills":"Choose two from Arcana, Deception, Insight, Intimidation, Persuation, and Religon"
+    },
+    "Pros":"",
+    "Cons":""
+    },
+    {
+      "Name": "Warlock",
+      "Description": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    },
+    {
+      "Name": "Wizard",
+      "Description": "A scholarly magic-user capable of manipulating the structures of reality.",
+      "PicLink": "",
+      "MoreInfoLink": "",
+      "Proficiencies": {
+        "Armor": "Light armor, medium armor, shields",
+        "Weapons": "Simple weapons, martial weapons",
+        "Tools": "None",
+        "Saving Throws": "Strength, Constitution",
+        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "Pros": "",
+      "Cons": ""
+    }
+  ]
+}
