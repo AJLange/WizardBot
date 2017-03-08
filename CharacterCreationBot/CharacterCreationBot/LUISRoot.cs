@@ -34,7 +34,9 @@ namespace CharacterCreationBot
         public async Task Test(IDialogContext context, LuisResult result)
         {
             //None is the default response
-            string message = "Test";
+            //this intent now means take the test!
+
+            string message = "Let's get started taking the test.";
             //Can also respond with the following if you don't have a set default message- $"Sorry I did not understand: " + string.Join(", ", result.Intents.Select(i => i.Intent));
 
             await context.PostAsync(message);
@@ -104,6 +106,10 @@ namespace CharacterCreationBot
             // 
         }
 
+
+    
+
+
         /// <summary>
         /// ReturnList - Returns a descriptive list for the specified Categories
         /// </summary>
@@ -111,6 +117,7 @@ namespace CharacterCreationBot
         /// <param name="result"></param>
         /// <returns></returns>
         [LuisIntent("ReturnList")]
+   
         public async Task ReturnList(IDialogContext context, LuisResult result)
         {
             var entitiesArray = result.Entities;
