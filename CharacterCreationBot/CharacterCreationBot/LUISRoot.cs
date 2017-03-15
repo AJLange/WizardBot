@@ -9,6 +9,7 @@ using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Connector;
 using System.Diagnostics;
 using CharacterCreationBot.Models;
+using Microsoft.Bot.Builder.FormFlow;
 
 namespace CharacterCreationBot
 {
@@ -22,7 +23,7 @@ namespace CharacterCreationBot
         public async Task None(IDialogContext context, LuisResult result)
         {
             //None is the default response
-            string message = "I'm a helpful bot to help you learn more about D&D Character Creation, so you can create your own characters. Ask me about Races, Classes, Alignments, character Attributes, or charachter backgrounds. If your a complete new person you can say 'I'm new'.";
+            string message = "I'm a helpful bot to help you learn more about D&D Character Creation, so you can create your own characters. Ask me about Races, Classes, Alignments, character Attributes, or character backgrounds. If you're not sure where to start, say 'I'm new'.";
             //Can also respond with the following if you don't have a set default message- $"Sorry I did not understand: " + string.Join(", ", result.Intents.Select(i => i.Intent));
 
             await context.PostAsync(message);
@@ -37,11 +38,25 @@ namespace CharacterCreationBot
             //this intent now means take the test!
 
             string message = "Let's get started taking the test.";
-            //Can also respond with the following if you don't have a set default message- $"Sorry I did not understand: " + string.Join(", ", result.Intents.Select(i => i.Intent));
+      
+                await context.PostAsync(message);
 
-            await context.PostAsync(message);
+                //Run Take the Test
+               var feedbackForm = new FormDialog<TakeTheTest.QuizForm>(new TakeTheTest.QuizForm(), TakeTheTest.QuizForm.BuildForm, FormOptions.PromptInStart);
+
+                string TestMe = TakeTheTest.QuizForm.TestResults();
+               // context.Call(feedbackForm, ChooseClass);
+
+
+            // Figure out what FinalClass is from the test
+            StoredUserVals.PlayerCharacter.MyClass = TestMe;
+   
             context.Wait(MessageReceived);
+            await context.PostAsync("You Chose " + StoredUserVals.PlayerCharacter.MyClass);
+
         }
+
+ 
 
         [LuisIntent("Greeting")]
         public async Task Greeting(IDialogContext context, LuisResult result)
@@ -53,7 +68,7 @@ namespace CharacterCreationBot
             //    // yes or no prompt
             //}
             //string message = Greetings[x];
-            string message = "Hi! I'm a helpful bot to help you learn more about D&D Character Creation. Ask me about Races, Classes, Alignments, character Attributes, or charachter backgrounds. If you're a complete new person you can say 'I'm new'.";
+            string message = "Hi! I'm a helpful bot to help you learn more about D&D Character Creation. Ask me about Races, Classes, Alignments, character Attributes, or character backgrounds. If you're not sure where to start, you can say 'I'm new'.";
             await context.PostAsync(message);
             context.Wait(MessageReceived);
         }
@@ -86,7 +101,7 @@ namespace CharacterCreationBot
             }
 
             await context.PostAsync(resultMessage);
-            var endMessage = "Let me know which category you would like to know more about; or you can take a test to figure out what combination would work for you. If yoyu are ready to build your character you can start now. ";
+            var endMessage = "Let me know which category you would like to know more about; or you can take a test to figure out what combination would work for you. If you are ready to build your character you can start now. ";
             await context.PostAsync(endMessage);
             context.Wait(MessageReceived);
         }
