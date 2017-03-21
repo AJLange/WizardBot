@@ -183,6 +183,25 @@ namespace CharacterCreationBot
 
                             await context.PostAsync(resultMessage);
                         }
+
+                        if (entityItem.Entity == "backgrounds" || entityItem.Entity == "background")
+                        {
+                            if (BackgroundsDictionary.backgroundsDictionary.Count < 1)
+                            {
+                                BackgroundsDictionary.BuildBackgroundsFromJSON();
+                            }
+
+                            var resultMessage = context.MakeMessage();
+                            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                            resultMessage.Attachments = new List<Attachment>();
+                            List<HeroCard> information = BackgroundsCards();
+                            foreach (var card in information)
+                            {
+                                resultMessage.Attachments.Add(card.ToAttachment());
+                            }
+
+                            await context.PostAsync(resultMessage);
+                        }
                     }
                 }
             }
@@ -243,6 +262,44 @@ namespace CharacterCreationBot
                 await context.PostAsync("You should reconsider. The City of Light will take away all pain.");
             }
             context.Wait(MessageReceived);
+        }
+
+        private List<HeroCard> BackgroundsCards()
+        {
+            List<HeroCard> cards = new List<HeroCard>();
+            for (int i = 0; i < BackgroundsDictionary.backgroundsDictionary.Count; i++)
+            {
+                Backgrounds curBG = BackgroundsDictionary.backgroundsDictionary.ElementAt(i).Value;
+                var equipmentString = "";
+                for (int j = 0; j < curBG.Equipment.Count; j++)
+                {
+                    equipmentString = equipmentString.ToString() + "* " + curBG.Equipment[j] + " \n\n ";
+                }
+                var profString = curBG.Description + " \n\n Equipment: \n\n " + equipmentString;
+                HeroCard backgroundHeroCard = new HeroCard()
+                {
+                    Title = curBG.Name,
+                    Subtitle = profString.ToString(),
+                    Text = "Hello",
+                    Images = new List<CardImage>()
+                        {
+                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
+                        },
+
+                    Buttons = new List<CardAction>()
+                        {
+                            new CardAction()
+                            {
+                                Title = "Go to site",
+                                Type = ActionTypes.OpenUrl,
+                                Value = "http://dnd.wizards.com/dungeons-and-dragons/what-is-dd/classes"
+                            }
+                        }
+
+                };
+                cards.Add(backgroundHeroCard);
+            }
+            return cards;
         }
 
 

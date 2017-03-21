@@ -62,6 +62,35 @@ namespace CharacterCreationBot.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Background&quot;: [
+        ///    {
+        ///      &quot;Name&quot;: &quot;Acolyte&quot;,
+        ///      &quot;Description&quot;: &quot;&quot;,
+        ///      &quot;Skill Proficiencies&quot;: &quot;Insight, Religion&quot;,
+        ///      &quot;Languages&quot;: &quot;Two of your choice&quot;,
+        ///      &quot;Extra&quot;: &quot;&quot;,
+        ///      &quot;Equipment&quot;: [
+        ///        &quot;A holy symbol&quot;,
+        ///        &quot;A prayer book or Prayer wheel&quot;,
+        ///        &quot;5 sticks of incense&quot;,
+        ///        &quot;Vestments&quot;,
+        ///        &quot;A set of common clothes&quot;,
+        ///        &quot;15gp&quot;
+        ///      ]
+        ///    },
+        ///    {
+        ///      &quot;Name&quot;: &quot;Charlatan&quot;,
+        ///      &quot;Description&quot;: &quot;&quot;,
+        ///      &quot;Skill Proficiencies&quot;: &quot;Natural athleticism, bodily power&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string BackgroundsJSON {
+            get {
+                return ResourceManager.GetString("BackgroundsJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Class&quot;:[
         ///    {
         ///    &quot;Name&quot;:&quot;Barbarian&quot;,

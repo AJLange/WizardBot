@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Models\BackgroundsDictionary.cs" />
     <Compile Include="TakeTheTest.cs" />
     <Compile Include="DictionaryBuilder.cs" />
     <Compile Include="Models\AbilitiesDictionary.cs" />
@@ -153,6 +154,7 @@
     <Content Include="Models\AllData.json" />
     <Content Include="Models\ClassesJSON.json" />
     <Content Include="Models\Abilities.json" />
+    <Content Include="Models\Backgrounds.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

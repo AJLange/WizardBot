@@ -1,0 +1,196 @@
+﻿{
+  "Background": [
+    {
+      "Name": "Acolyte",
+      "Description": "",
+      "Skill Proficiencies": "Insight, Religion",
+      "Languages": "Two of your choice",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Charlatan",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Criminal",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Entertainer",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Folk Hero",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Guild Artisan",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Hermit",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Noble",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Outlander",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Sage",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Sailor",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Soldier",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    },
+    {
+      "Name": "Urchin",
+      "Description": "",
+      "Skill Proficiencies": "Natural athleticism, bodily power",
+      "Languages": "Barbarian, fighter, paladin",
+      "Extra": "",
+      "Equipment": [
+        "A holy symbol",
+        "A prayer book or Prayer wheel",
+        "5 sticks of incense",
+        "Vestments",
+        "A set of common clothes",
+        "15gp"
+      ]
+    }
+
+  ]
+}
