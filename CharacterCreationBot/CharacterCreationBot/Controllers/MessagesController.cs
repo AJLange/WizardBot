@@ -70,7 +70,6 @@ namespace CharacterCreationBot
             {
             }
 
-            return null;
         }
     }
 }

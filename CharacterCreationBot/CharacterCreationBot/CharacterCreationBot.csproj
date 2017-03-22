@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="LUISQueryDialog.cs" />
     <Compile Include="Models\BackgroundsDictionary.cs" />
     <Compile Include="RootDialog.cs" />
     <Compile Include="TakeTheTest.cs" />
