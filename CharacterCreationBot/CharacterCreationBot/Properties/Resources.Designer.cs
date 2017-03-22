@@ -81,7 +81,7 @@ namespace CharacterCreationBot.Properties {
         ///    {
         ///      &quot;Name&quot;: &quot;Charlatan&quot;,
         ///      &quot;Description&quot;: &quot;&quot;,
-        ///      &quot;Skill Proficiencies&quot;: &quot;Natural athleticism, bodily power&quot; [rest of string was truncated]&quot;;.
+        ///      &quot;Skill Proficiencies&quot;: &quot;Natural athlet [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BackgroundsJSON {
             get {
@@ -122,6 +122,15 @@ namespace CharacterCreationBot.Properties {
         internal static string RacesJSON {
             get {
                 return ResourceManager.GetString("RacesJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m a bot talking to you.
+        /// </summary>
+        internal static string RootDialog_Welcome_Message {
+            get {
+                return ResourceManager.GetString("RootDialog_Welcome_Message", resourceCulture);
             }
         }
     }

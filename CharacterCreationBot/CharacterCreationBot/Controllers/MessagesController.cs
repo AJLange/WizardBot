@@ -9,6 +9,7 @@ using Microsoft.Bot.Connector;
 using Microsoft.Bot.Builder.Dialogs;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using CharacterCreationBot.Properties;
 
 namespace CharacterCreationBot
 {
@@ -23,14 +24,6 @@ namespace CharacterCreationBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-                //// calculate something for us to return
-                //int length = (activity.Text ?? string.Empty).Length;
-
-                //// return our reply to the user
-                //Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters");
-                //await connector.Conversations.ReplyToActivityAsync(reply);
-
                 await Conversation.SendAsync(activity, () => new LUISRoot());
                 //await Conversation.SendAsync(activity, () => new CommandDialog());
 
@@ -43,7 +36,7 @@ namespace CharacterCreationBot
             return response;
         }
 
-        private Activity HandleSystemMessage(Activity message)
+        private async Task HandleSystemMessage(Activity message)
         {
             if (message.Type == ActivityTypes.DeleteUserData)
             {
@@ -55,6 +48,14 @@ namespace CharacterCreationBot
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
+                if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
+                {
+                    var reply = message.CreateReply(Resources.RootDialog_Welcome_Message);
+
+                    ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+
+                    await connector.Conversations.ReplyToActivityAsync(reply);
+                }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
