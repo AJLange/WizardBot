@@ -12,6 +12,8 @@ using CharacterCreationBot.Models;
 
 namespace CharacterCreationBot
 {
+
+
     public class StoredUserVals
     {
 
@@ -50,5 +52,8 @@ namespace CharacterCreationBot
             public static List<string> MyGear { get; set; }
             public static string MyName { get; set; }
         }
+
+
+
     }
 }

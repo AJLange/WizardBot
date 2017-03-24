@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CreateACharacter.cs" />
     <Compile Include="Models\BackgroundsDictionary.cs" />
     <Compile Include="TakeTheTest.cs" />
     <Compile Include="DictionaryBuilder.cs" />

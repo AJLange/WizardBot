@@ -73,6 +73,8 @@ namespace CharacterCreationBot
             context.Wait(MessageReceived);
         }
 
+
+
         /// <summary>
         /// New - Handles new person on where to start and has a button list about different things they can learn about
         /// </summary>
