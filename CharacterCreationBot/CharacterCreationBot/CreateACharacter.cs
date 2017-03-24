@@ -34,10 +34,12 @@ namespace CharacterCreationBot
 
         }
 
+        //'echobot' code for assigning a name. Nothing actually fires this yet. 
+        //To Do
         public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
             var message = await argument;
-            await context.PostAsync("You said: " + message.Text);
+            await context.PostAsync("Your name is: " + message.Text);
             StoredUserVals.PlayerCharacter.MyName = message.Text;
             context.Wait(MessageReceivedAsync);
         }
@@ -60,7 +62,7 @@ namespace CharacterCreationBot
             setMyAttributeOrder();
 
             //this is the code that will add your information from your race modifier
-
+            raceModifiersAdd();
         }
 
         public void setMyAttributeOrder()
@@ -100,9 +102,39 @@ namespace CharacterCreationBot
             
 
          }
-}
-       
+
+        void raceModifiersAdd()
+        {
+            //if human, you have to let the user pick. TO DO for now
+
+            //other cases do addition as so:
+
+            switch (StoredUserVals.PlayerCharacter.MyRace)
+            {
+                case "Elf":
+                break;
+                case "Dwarf":
+                break;
+                case "Half-Elf":
+                break;
+                case "Gnome":
+                break;
+                case "Tiefling":
+                break;
+                case "Dragonborn":
+                break;
+                case "Halfling":
+                break;
+                case "Half-Orc":
+                break;     
+
+            }
+
+        }
 
     }
+       
+
+}
 
 
