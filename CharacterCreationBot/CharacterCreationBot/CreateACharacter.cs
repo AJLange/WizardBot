@@ -179,10 +179,10 @@ namespace CharacterCreationBot
             for (int i = 0; i < AbilitiesDictionary.abilitiesDictionary.Count; i++)
             {
                 Abilities curAttribute = AbilitiesDictionary.abilitiesDictionary.ElementAt(i).Value;
-                string allSkills = "";
+                string allSkills = "Skill Checks for this attribute \n\n * ";
                 foreach(string skill in curAttribute.Skills)
                 {
-                    allSkills = allSkills +"* " + skill + " \n\n ";
+                    allSkills = allSkills + skill + " \n\n * ";
                 }
                 HeroCard raceHeroCard = new HeroCard()
                 {
