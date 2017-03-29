@@ -39,6 +39,16 @@ namespace CharacterCreationBot
             context.Wait(MessageReceived);
         }
 
+        [LuisIntent("Done")]
+        public async Task Done(IDialogContext context, LuisResult result)
+        {
+            //None is the default response
+            string message = "Go back to beginning";
+            await context.PostAsync(message);
+            context.Done("Back");
+        }
+
+
         [LuisIntent("Test")]
         public async Task Test(IDialogContext context, LuisResult result)
         {

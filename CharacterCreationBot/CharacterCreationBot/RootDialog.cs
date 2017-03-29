@@ -46,7 +46,7 @@ namespace CharacterCreationBot
             HeroCard heroCard = CreateWelcomeHeroCard();
             resultMessage.Attachments.Add(heroCard.ToAttachment());
 
-            context.PostAsync(Resources.RootDialog_Welcome_Message);
+            await context.PostAsync(Resources.RootDialog_Welcome_Message);
 
             await context.PostAsync(resultMessage);
 
@@ -111,6 +111,7 @@ namespace CharacterCreationBot
             else if (message.Text == "Test")
             {
                 await context.PostAsync("You chose: " + message.Text);
+                await this.TestSelected(context);
             }
             else
             {
@@ -118,23 +119,33 @@ namespace CharacterCreationBot
             }
         }
 
+        private async Task TestSelected(IDialogContext context)
+        {
+
+            var dialog = new LUISRoot();
+            context.Call(dialog, GetUserResponse);
+        }
       
         private async Task LearnMoreMessageAsync(IDialogContext context)
         {
             //If we put the new carolsel here it will not register the users input for the ListDialog and will need the user to select which option they would like to know more about twice...
-            var resultMessage = context.MakeMessage();
-            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
-            resultMessage.Attachments = new List<Attachment>();
-            List<HeroCard> information = CategoryCards();
-            foreach (var card in information)
-            {
-                resultMessage.Attachments.Add(card.ToAttachment());
-            }
+            //var resultMessage = context.MakeMessage();
+            //resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+            //resultMessage.Attachments = new List<Attachment>();
+            //List<HeroCard> information = CategoryCards();
+            //foreach (var card in information)
+            //{
+            //    resultMessage.Attachments.Add(card.ToAttachment());
+            //}
 
-            await context.PostAsync(resultMessage);
-            //await context.PostAsync(endMessage);
+            //await context.PostAsync(resultMessage);
+            ////await context.PostAsync(endMessage);
 
-            context.Wait(this.OnOptionSelected);
+            //context.Wait(this.OnOptionSelected);
+
+            //var dialog = new ListsDialog();
+            var dialog = new LUISRoot();
+            context.Call(dialog, GetUserResponse);
         }
 
 
@@ -208,9 +219,31 @@ namespace CharacterCreationBot
             }
         }
 
+        private async Task GetUserResponse(IDialogContext context, IAwaitable<string> result)
+        {
+            string message = await result;
+            await this.ProcessMessageReceived(context, message);
+        }
+
         private async Task GetUserResponse(IDialogContext context, IAwaitable<object> result)
         {
-            context.Wait(MessageReceivedAsync);
+            //string message = await result;
+            //await this.ProcessMessageReceived(context, message);
+        }
+
+        public async Task ProcessMessageReceived(IDialogContext context, string response)
+        {
+            var themessage = response;
+
+            switch (themessage)
+            {
+                case "Back":
+                    await this.StartAsync(context);
+                    break;
+                default:
+                    await this.StartAsync(context);
+                    break;
+            }
         }
 
         private async Task BackFromLuis(IDialogContext context, IAwaitable<string> result)
@@ -229,7 +262,7 @@ namespace CharacterCreationBot
 
         private async Task StartOverAsync(IDialogContext context, IMessageActivity message)
         {
-            await context.PostAsync(message);
+            //await context.PostAsync(message);
             //this.order = new Models.Order();
             await this.WelcomeMessageAsync(context);
         }
