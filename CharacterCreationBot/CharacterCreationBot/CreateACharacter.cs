@@ -308,10 +308,10 @@ namespace CharacterCreationBot
 
             int[] AttributesAll = new int[6];
 
-            foreach (int num in AttributesAll)
+            for (int i = 0; i < AttributesAll.Length; i++)
             {
-                AttributesAll[num] = roll4D6();
-                Console.WriteLine("Attribute is: " + AttributesAll[num]);
+                AttributesAll[i] = roll4D6();
+                Console.WriteLine("Attribute is: " + AttributesAll[i]);
             }
 
             return AttributesAll;
@@ -336,10 +336,10 @@ namespace CharacterCreationBot
 
             int[] allDice = new int[4];
 
-            foreach (int die in allDice)
-            {
-                allDice[die] = rnd.Next(6) + 1;
-                Console.WriteLine("Rolled: " + allDice[die]);
+            for(int i = 0; i < allDice.Length ; i++)
+            { 
+                allDice[i] = rnd.Next(6) + 1;
+                Console.WriteLine("Rolled: " + allDice[i]);
             }
 
 
@@ -350,7 +350,7 @@ namespace CharacterCreationBot
 
             allDiceListed.Sort();
 
-            int diceResult = allDice[0] + allDice[1] + allDice[2];
+            int diceResult = allDiceListed[1] + allDiceListed[2] + allDiceListed[3];
             Console.WriteLine("Die Roll = " + diceResult);
 
             //return result should be between 3 and 18
