@@ -93,39 +93,51 @@ namespace CharacterCreationBot
         private async Task OnWelcomeOptionSelected(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
             var message = await result;
-
-            if (message.Text == "LearnMore")
+            string response = "";
+            switch (message.Text)
             {
-                string response = "Okay, building a character is super fun but if you're new to D&D you might be a little overwhelmed. I'm here to help. Each Player Character has: \n\n"
-                + "* Class - What you do \n\n"
-                + "* Race - Who you are \n\n"
-                + "* Background - Where you come from \n\n"
-                + "* Alignment - How you behave \n\n"
-                + "* Abilities - How well you do, what you do ";
-                await context.PostAsync(response);
+                case "LearnMore":
+                    response = "Okay, building a character is super fun but if you're new to D&D you might be a little overwhelmed. I'm here to help. Each Player Character has: \n\n"
+                    + "* Class - What you do \n\n"
+                    + "* Race - Who you are \n\n"
+                    + "* Background - Where you come from \n\n"
+                    + "* Alignment - How you behave \n\n"
+                    + "* Abilities - How well you do, what you do ";
+                    await context.PostAsync(response);
 
 
-                await this.LearnMoreMessageAsync(context);
+                    await this.LearnMoreMessageAsync(context);
+                    break;
+                case "Test":
+                    response = "Let's take a quick test to find out your Class and Race!";
+                    await context.PostAsync(response);
+                    await this.TestMessageAsync(context);
+                    break;
+                case "Build":
+                    response = "Let's build your character now!";
+                    await context.PostAsync(response);
+                    await this.BuildMessageAsync(context);
+                    break;
+                default:
+                    await this.StartOverAsync(context, message.Text);
+                    break;
+            }
 
-            }
-            else if (message.Text == "Test")
-            {
-                await context.PostAsync("You chose: " + message.Text);
-                await this.TestSelected(context);
-            }
-            else
-            {
-                await this.StartOverAsync(context, "Please select one of the options.");
-            }
         }
 
-        private async Task TestSelected(IDialogContext context)
+        private async Task TestMessageAsync(IDialogContext context)
         {
 
             var dialog = new LUISRoot();
             context.Call(dialog, GetUserResponse);
         }
-      
+
+        private async Task BuildMessageAsync(IDialogContext context)
+        {
+            var dialog = new CreateACharacter();
+            context.Call(dialog, GetUserResponse);
+        }
+
         private async Task LearnMoreMessageAsync(IDialogContext context)
         {
             //If we put the new carolsel here it will not register the users input for the ListDialog and will need the user to select which option they would like to know more about twice...
