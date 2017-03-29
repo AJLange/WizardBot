@@ -638,4 +638,19 @@
 ]
 }</value>
   </data>
+  <data name="RootDialog_Welcome_Message" xml:space="preserve">
+    <value>Hi! I'm a helpful bot to help you learn more about D&amp;D Character Creation. Would you like to learn more about D&amp;D character creation, take a test to find out which Race and Class would be best for you, or you can start building your character now.</value>
+  </data>
+  <data name="RootDialog_Welcome_Option1" xml:space="preserve">
+    <value>Option1</value>
+  </data>
+  <data name="RootDialog_Welcome_Option2" xml:space="preserve">
+    <value>Option2</value>
+  </data>
+  <data name="RootDialog_Welcome_Subtitle" xml:space="preserve">
+    <value>Subtile also welcoming</value>
+  </data>
+  <data name="RootDialog_Welcome_Title" xml:space="preserve">
+    <value>Welcome Title</value>
+  </data>
 </root>
