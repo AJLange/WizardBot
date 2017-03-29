@@ -11,10 +11,9 @@
       "Dragonborn (+2)",
       "Human (+1)"
       ],
-    "Checks":[
-      "",
-      "",
-      ""]
+    "Skills":[
+      "Athletics"
+    ]
   },
   {
     "Name": "Dexterity",
@@ -27,10 +26,10 @@
       "Forest gnome (+1)",
       "Human (+1)"
       ],
-    "Checks":[
-      "",
-      "",
-      ""]
+    "Skills":[
+      "Acrobatics",
+      "Slight of Hand",
+      "Stealth"]
   },
     {
       "Name": "Constitution",
@@ -44,9 +43,7 @@
         "Human (+1)",
         "Half-orc (+1)"
       ],
-      "Checks": [
-        "",
-        "",
+      "Skills": [
         ""
       ]
     },
@@ -61,10 +58,13 @@
       "Tiefling (+1)",
       "Human (+1)"
       ],
-    "Checks":[
-      "",
-      "",
-      ""]
+    "Skills":[
+      "Arcana",
+      "History",
+      "Investigation",
+      "Nature",
+      "Religion"
+    ]
   },
   {
     "Name": "Wisdom",
@@ -76,10 +76,13 @@
       "Wood elf (+1)",
       "Human (+1)"
       ],
-    "Checks":[
-      "",
-      "",
-      ""]
+    "Skills":[
+      "Animal Handling",
+      "Insight",
+      "Medicine",
+      "Perception",
+      "Survival"
+    ]
   },
   {
     "Name": "Charisma",
@@ -94,10 +97,12 @@
       "Tiefling (+2)",
       "Human (+1)"
       ],
-    "Checks":[
-      "",
-      "",
-      ""]
+    "Skills":[
+      "Deception",
+      "Intimidation",
+      "Performance",
+      "Persuasion"
+    ]
   }
   
   ]

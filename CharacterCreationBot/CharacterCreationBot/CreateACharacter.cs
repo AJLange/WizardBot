@@ -100,8 +100,8 @@ namespace CharacterCreationBot
             {
                 StoredUserVals.PlayerCharacter.MyRace = usermessage.Text;
                 usersClass = usermessage.Text;
-                await context.PostAsync("You selected: " + usermessage.Text + "for your race");
-                await this.ShowSelectRaces(context);
+                await context.PostAsync("You selected: " + usermessage.Text + " for your race");
+                await this.ShowAttributes(context);
             }
             else
             {
@@ -109,6 +109,105 @@ namespace CharacterCreationBot
                 await this.ShowSelectRaces(context);
             }
 
+        }
+
+        protected async Task ShowAttributes(IDialogContext context)
+        {
+
+            await context.PostAsync("Next we need to select values for all the attributes: Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma");
+
+            await context.PostAsync("Here are the numbers we created for you.");
+            int[] attributes = setAttributes();
+            string ints = "";
+            for (int i = 0; i<attributes.Length; i++)
+            {
+                ints = ints + attributes[i].ToString() + ", ";
+            }
+            await context.PostAsync(ints);
+
+            await this.ShowAttributeSelection(context);
+
+
+        }
+
+        private async Task ShowAttributeSelection(IDialogContext context)
+        {
+            if (AbilitiesDictionary.abilitiesDictionary.Count < 1)
+            {
+                AbilitiesDictionary.BuildAbilitiesFromJSON();
+            }
+
+            var resultMessage = context.MakeMessage();
+            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+            resultMessage.Attachments = new List<Attachment>();
+            List<HeroCard> information = AttributeCards();
+            foreach (var card in information)
+            {
+                resultMessage.Attachments.Add(card.ToAttachment());
+            }
+
+            await context.PostAsync(resultMessage);
+            //await context.PostAsync(endMessage);
+
+            context.Wait(this.OnAttributeSelected);
+            
+        }
+
+        private async Task OnAttributeSelected(IDialogContext context, IAwaitable<IMessageActivity> result)
+        {
+            var usermessage = await result;
+            // need to check if they selected a correct value...
+            if (RaceDictionary.raceDictionary.ContainsKey(usermessage.Text))
+            {
+                StoredUserVals.PlayerCharacter.MyRace = usermessage.Text;
+                usersClass = usermessage.Text;
+                await context.PostAsync("You selected: " + usermessage.Text + " for your race");
+                await this.ShowAttributes(context);
+            }
+            else
+            {
+                await context.PostAsync("That wasn't a valid choice.");
+                await this.ShowSelectRaces(context);
+            }
+
+        }
+
+        public List<HeroCard> AttributeCards()
+        {
+
+            List<HeroCard> cards = new List<HeroCard>();
+            for (int i = 0; i < AbilitiesDictionary.abilitiesDictionary.Count; i++)
+            {
+                Abilities curAttribute = AbilitiesDictionary.abilitiesDictionary.ElementAt(i).Value;
+                string allSkills = "";
+                foreach(string skill in curAttribute.Skills)
+                {
+                    allSkills = allSkills +"* " + skill + " \n\n ";
+                }
+                HeroCard raceHeroCard = new HeroCard()
+                {
+                    Title = curAttribute.Name,
+                    Subtitle = curAttribute.Measures,
+                    Images = new List<CardImage>()
+                        {
+                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
+                        },
+                    Text = allSkills,
+                    Buttons = new List<CardAction>()
+                        {
+                            new CardAction()
+                            {
+                                Title = "Select "+ curAttribute.Name,
+                                Type = ActionTypes.ImBack,
+                                Value = curAttribute.Name
+                            }
+                        }
+
+                };
+                cards.Add(raceHeroCard);
+            }
+
+            return cards;
         }
 
         public List<HeroCard> RaceCards()
@@ -202,7 +301,7 @@ namespace CharacterCreationBot
             context.Wait(MessageReceivedAsync);
         }
 
-        public void setAttributes()
+        public int[] setAttributes()
         {
             //this is the code for default die rolling
             //assigns 6 values between 3 and 18 to an array
@@ -215,12 +314,12 @@ namespace CharacterCreationBot
                 Console.WriteLine("Attribute is: " + AttributesAll[num]);
             }
 
-
+            return AttributesAll;
             //this allows to arrange attributes in order for the user
-            setMyAttributeOrder();
+            //setMyAttributeOrder();
 
             //this is the code that will add your information from your race modifier
-            raceModifiersAdd();
+            //raceModifiersAdd();
         }
 
         public void setMyAttributeOrder()

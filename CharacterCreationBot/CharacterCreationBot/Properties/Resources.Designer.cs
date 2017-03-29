@@ -62,6 +62,36 @@ namespace CharacterCreationBot.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Abilities&quot; : [
+        ///    {
+        ///    &quot;Name&quot;: &quot;Strength&quot;,
+        ///    &quot;Description&quot;: &quot;&quot;,
+        ///    &quot;Measures&quot;:&quot;Natural athleticism, bodily power&quot;,
+        ///    &quot;Important for&quot;:&quot;Barbarian, fighter, paladin&quot;,
+        ///    &quot;Racial Increase&quot;:[
+        ///      &quot;Mountain dwarf (+2)&quot;,
+        ///      &quot;Half-orc (+2)&quot;,
+        ///      &quot;Dragonborn (+2)&quot;,
+        ///      &quot;Human (+1)&quot;
+        ///      ],
+        ///    &quot;Skills&quot;:[
+        ///      &quot;Athletics&quot;
+        ///    ]
+        ///  },
+        ///  {
+        ///    &quot;Name&quot;: &quot;Dexterity&quot;,
+        ///    &quot;Description&quot;: &quot;&quot;,
+        ///    &quot;Measures&quot;:&quot;Physical agility, reflexes, balance, poise&quot;,
+        ///    &quot;Important for&quot;:&quot;Monk, ra [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AbilitiesJSON {
+            get {
+                return ResourceManager.GetString("AbilitiesJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Background&quot;: [
         ///    {
         ///      &quot;Name&quot;: &quot;Acolyte&quot;,

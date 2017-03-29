@@ -117,6 +117,117 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbilitiesJSON" xml:space="preserve">
+    <value>{
+  "Abilities" : [
+    {
+    "Name": "Strength",
+    "Description": "",
+    "Measures":"Natural athleticism, bodily power",
+    "Important for":"Barbarian, fighter, paladin",
+    "Racial Increase":[
+      "Mountain dwarf (+2)",
+      "Half-orc (+2)",
+      "Dragonborn (+2)",
+      "Human (+1)"
+      ],
+    "Skills":[
+      "Athletics"
+    ]
+  },
+  {
+    "Name": "Dexterity",
+    "Description": "",
+    "Measures":"Physical agility, reflexes, balance, poise",
+    "Important for":"Monk, ranger, rouge",
+    "Racial Increase":[
+      "Elf (+2)",
+      "Halfling (+2)",
+      "Forest gnome (+1)",
+      "Human (+1)"
+      ],
+    "Skills":[
+      "Acrobatics",
+      "Slight of Hand",
+      "Stealth"]
+  },
+    {
+      "Name": "Constitution",
+      "Description": "",
+      "Measures": "Health, stamina, vital force",
+      "Important for": "Everyone",
+      "Racial Increase": [
+        "Dwarf (+2)",
+        "Stout halfling (+1)",
+        "Rock gnome (+2)",
+        "Human (+1)",
+        "Half-orc (+1)"
+      ],
+      "Skills": [
+        ""
+      ]
+    },
+    {
+    "Name": "Intelligence",
+    "Description": "",
+    "Measures":"Mental acuity, information recall, analytical skill",
+    "Important for":"Wizard",
+    "Racial Increase":[
+      "High elf (+1)",
+      "Gnome (+2)",
+      "Tiefling (+1)",
+      "Human (+1)"
+      ],
+    "Skills":[
+      "Arcana",
+      "History",
+      "Investigation",
+      "Nature",
+      "Religion"
+    ]
+  },
+  {
+    "Name": "Wisdom",
+    "Description": "",
+    "Measures":"Awareness, intuition, insight",
+    "Important for":"Cleric, druid",
+    "Racial Increase":[
+      "Hill dwarf (+1)",
+      "Wood elf (+1)",
+      "Human (+1)"
+      ],
+    "Skills":[
+      "Animal Handling",
+      "Insight",
+      "Medicine",
+      "Perception",
+      "Survival"
+    ]
+  },
+  {
+    "Name": "Charisma",
+    "Description": "",
+    "Measures":"Confidence, eloquence leadership",
+    "Important for":"Bard, sorcerer, warlock",
+    "Racial Increase":[
+      "Half-elf (+2)",
+      "Drow (+1)",
+      "Lightfoot halfling (+1)",
+      "Dragonborn (+1)",
+      "Tiefling (+2)",
+      "Human (+1)"
+      ],
+    "Skills":[
+      "Deception",
+      "Intimidation",
+      "Performance",
+      "Persuasion"
+    ]
+  }
+  
+  ]
+}</value>
+  </data>
   <data name="BackgroundsJSON" xml:space="preserve">
     <value>{
   "Background": [
