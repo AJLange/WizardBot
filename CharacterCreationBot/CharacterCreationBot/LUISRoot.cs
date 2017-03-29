@@ -18,25 +18,30 @@ namespace CharacterCreationBot
     public class LUISRoot : LuisDialog<object>
     {
 
-        //Generate Method for every Intent in LUIS model
+        //private async Task StartAsync(IDialogContext context, string result)
+        //{
+        //    if (result == "Classes")
+        //    {
+        //        // call clases dialog
+        //        await context.PostAsync("This is a classes Dialog...");
+        //    }
+        //    //context.Wait(this.ReturnList();
+        //}
+
+
         [LuisIntent("None")]
         public async Task None(IDialogContext context, LuisResult result)
         {
             //None is the default response
             string message = "I'm a helpful bot to help you learn more about D&D Character Creation, so you can create your own characters. Ask me about Races, Classes, Alignments, character Attributes, or character backgrounds. If you're not sure where to start, say 'I'm new'.";
-            //Can also respond with the following if you don't have a set default message- $"Sorry I did not understand: " + string.Join(", ", result.Intents.Select(i => i.Intent));
 
             await context.PostAsync(message);
             context.Wait(MessageReceived);
         }
 
-        //Generate Method for every Intent in LUIS model
         [LuisIntent("Test")]
         public async Task Test(IDialogContext context, LuisResult result)
         {
-            //None is the default response
-            //this intent now means take the test!
-
             string message = "Let's get started taking the test.";
       
                 await context.PostAsync(message);
@@ -45,7 +50,6 @@ namespace CharacterCreationBot
                var feedbackForm = new FormDialog<TakeTheTest.QuizForm>(new TakeTheTest.QuizForm(), TakeTheTest.QuizForm.BuildForm, FormOptions.PromptInStart);
 
                 string TestMe = TakeTheTest.QuizForm.TestResults();
-               // context.Call(feedbackForm, ChooseClass);
 
 
             // Figure out what FinalClass is from the test
@@ -61,13 +65,6 @@ namespace CharacterCreationBot
         [LuisIntent("Greeting")]
         public async Task Greeting(IDialogContext context, LuisResult result)
         {
-            //Random random = new Random();
-            //int x = random.Next(0, 5);
-            //if(x == 0)
-            //{
-            //    // yes or no prompt
-            //}
-            //string message = Greetings[x];
             string message = "Hi! I'm a helpful bot to help you learn more about D&D Character Creation. Ask me about Races, Classes, Alignments, character Attributes, or character backgrounds. If you're not sure where to start, you can say 'I'm new'.";
             await context.PostAsync(message);
             context.Wait(MessageReceived);
@@ -205,49 +202,7 @@ namespace CharacterCreationBot
                     }
                 }
             }
-            
-            //Chain.PostToChain()
-            //    .ContinueWith(async (ctxt, res) =>
-            //    {
-            //        var msg = await res;
-            //        await context.PostAsync($"you said {msg.Text}");
-            //        return Chain.From(() => new PromptDialog.PromptChoice<string>(new[] { "a", "b", "c" }, "Which one you want to select?", string.Empty, 1, PromptStyle.None));
-            //    })
-            //    .ContinueWith(async (ctxt, res) =>
-            //    {
-            //        var selection = await res;
-            //        ctxt.ConversationData.SetValue("selected", selection);
-            //        return (IDialog<bool>)new PromptDialog.PromptConfirm($"do you want {selection}?", string.Empty, 1, PromptStyle.None);
-            //    })
-            //    .Then(async (context1, res) =>
-            //    {
-
-            //        var selection = context.ConversationData.Get<string>("selected");
-            //        if (await res)
-            //        {
-            //            return $"{selection} is selected!";
-            //        }
-            //        else
-            //        {
-            //            return "selection canceled!";
-            //        }
-            //    })
-            //    .PostToUser();
-
-
-            //new PromptDialog.PromptChoice<string>(new[] { "a", "b", "c" }, "Which one you want to select?", string.Empty, 1, PromptStyle.None);
-
-            //PromptDialog.Confirm(
-            //    context,
-            //    JoinConfirmation,
-            //    "Do you want to take the key?",
-            //    "I do not understand your response.",
-            //    promptStyle: PromptStyle.None);
-
-
-            //string message = "Would you like to know more about Classes, Abilites and Modifiers, or Backgrounds now? You can also start building your character and say Start Building.";
-            //await context.PostAsync(message);
-            //context.Wait(MessageReceived);
+     
         }
 
         public async Task JoinConfirmation(IDialogContext context, IAwaitable<bool> argument)

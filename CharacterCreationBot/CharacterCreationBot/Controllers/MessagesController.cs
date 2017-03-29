@@ -24,8 +24,8 @@ namespace CharacterCreationBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new LUISRoot());
-                //await Conversation.SendAsync(activity, () => new CommandDialog());
+                //await Conversation.SendAsync(activity, () => new LUISRoot());
+                await Conversation.SendAsync(activity, () => new RootDialog());
 
             }
             else
@@ -50,11 +50,15 @@ namespace CharacterCreationBot
                 // Not available in all channels
                 if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
+                    
+
                     var reply = message.CreateReply(Resources.RootDialog_Welcome_Message);
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-
                     await connector.Conversations.ReplyToActivityAsync(reply);
+
+                    //await Conversation.SendAsync(message, () => new RootDialog());
+
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)

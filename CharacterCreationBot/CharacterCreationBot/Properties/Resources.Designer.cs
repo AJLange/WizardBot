@@ -126,11 +126,47 @@ namespace CharacterCreationBot.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I&apos;m a bot talking to you.
+        ///   Looks up a localized string similar to Hi! I&apos;m a helpful bot to help you learn more about D&amp;D Character Creation. Would you like to learn more about D&amp;D character creation, take a test to find out which Race and Class would be best for you, or you can start building your character now..
         /// </summary>
         internal static string RootDialog_Welcome_Message {
             get {
                 return ResourceManager.GetString("RootDialog_Welcome_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option1.
+        /// </summary>
+        internal static string RootDialog_Welcome_Option1 {
+            get {
+                return ResourceManager.GetString("RootDialog_Welcome_Option1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option2.
+        /// </summary>
+        internal static string RootDialog_Welcome_Option2 {
+            get {
+                return ResourceManager.GetString("RootDialog_Welcome_Option2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subtile also welcoming.
+        /// </summary>
+        internal static string RootDialog_Welcome_Subtitle {
+            get {
+                return ResourceManager.GetString("RootDialog_Welcome_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome Title.
+        /// </summary>
+        internal static string RootDialog_Welcome_Title {
+            get {
+                return ResourceManager.GetString("RootDialog_Welcome_Title", resourceCulture);
             }
         }
     }
