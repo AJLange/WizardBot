@@ -54,23 +54,10 @@ namespace CharacterCreationBot
         [LuisIntent("Test")]
         public async Task Test(IDialogContext context, LuisResult result)
         {
-            context.Done(result);
-            //string message = "Let's get started taking the test.";
-      
-            //    await context.PostAsync(message);
+            string message = "Okay, let's start.";
 
-            //    //Run Take the Test
-            //   var feedbackForm = new FormDialog<TakeTheTest.QuizForm>(new TakeTheTest.QuizForm(), TakeTheTest.QuizForm.BuildForm, FormOptions.PromptInStart);
-
-            //    string TestMe = TakeTheTest.QuizForm.TestResults();
-
-
-            //// Figure out what FinalClass is from the test
-            //StoredUserVals.PlayerCharacter.MyClass = TestMe;
-   
-            //context.Wait(MessageReceived);
-            //await context.PostAsync("You Chose " + StoredUserVals.PlayerCharacter.MyClass);
-
+            ContextPasser cp = new ContextPasser(result.Intents[0].Intent, result.Entities.ToList(), message);
+            context.Done(cp);
         }
 
  
@@ -122,15 +109,9 @@ namespace CharacterCreationBot
         public async Task BuildCharacter(IDialogContext context, LuisResult result)
         {
             string message = "Okay so the first thing you have to choose for your character is your Class";
-            await context.PostAsync(message);
-            //context.Wait(MessageReceived);
 
-            // GO TO DIFFERENT DIALOG! 
-            // Button to choose Race and Class
-
-            // ABILITIES
-
-            // 
+            ContextPasser cp = new ContextPasser(result.Intents[0].Intent, result.Entities.ToList(), message);
+            context.Done(cp);
         }
 
 
