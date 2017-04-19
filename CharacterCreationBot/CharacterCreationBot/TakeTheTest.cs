@@ -45,7 +45,7 @@ namespace CharacterCreationBot
 
         public class QuizForm
         {
-            [Prompt("Do you imagine your character fighting primarily with weapons or physical prowess, mostly casting magic, or a combination of both?")]
+            [Prompt("Do you imagine your character fighting primarily with weapons or physical prowess, mostly casting magic, or a combination of both? {||}")]
 
             public Question1options? Choice1;
 
@@ -53,7 +53,7 @@ namespace CharacterCreationBot
             //magic classes: { BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; }
             // combo classes: { BardValue++; PaladinValue++; ClericValue++; DruidValue++; WarlockValue++; RogueValue++; RangerValue++; }
 
-            [Prompt("Do you feel like your character would be in tune with nature, in tune with arcane forces, or rely on a deity or outsider for their power? (Or None of the above?)")]
+            [Prompt("Do you feel like your character would be in tune with nature, in tune with arcane forces, or rely on a deity or outsider for their power? (Or None of the above?) {||}")]
             public Question2options? Choice2;
 
             //Natural: { MonkValue++; DruidValue++; RangerValue++; }
@@ -61,7 +61,7 @@ namespace CharacterCreationBot
             //   diety classes: { PaladinValue++; ClericValue++; WarlockValue++; }
             //   nada { BarbarianValue++; FighterValue++; RogueValue++; }
 
-            [Prompt("Would you like a character that’s more self-reliant, or one that shines best in a team situation ?")]
+            [Prompt("Would you like a character that’s more self-reliant, or one that shines best in a team situation? {||}")]
             public Question3options? Choice3;
 
             //Self { BarbarianValue++; FighterValue++; DruidValue++; PaladinValue++; RogueValue++; SorcererValue++; RangerValue++; MonkValue++; }
@@ -69,13 +69,13 @@ namespace CharacterCreationBot
 
 
 
-            [Prompt("Do you want a character that can heal other party members? ")]
+            [Prompt("Do you want a character that can heal other party members? {||} ")]
             public bool? HealerYesNo;
             //Canheal { ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; }
             // noheal { FighterValue++; BarbarianValue++; PaladinValue++; MonkValue++; WarlockValue++; RogueValue++; WizardValue++; SorcererValue++; }
 
 
-            [Prompt("Do you want a character who might fight alongside a pet?")]
+            [Prompt("Do you want a character who might fight alongside a pet? {||}")]
             public bool? PetYesNo;
 
             // Canpet { DruidValue++; WizardValue++; RangerValue++; WarlockValue++; }
@@ -83,7 +83,7 @@ namespace CharacterCreationBot
 
 
 
-            [Prompt("Do you see your character more as having intuitive powers, or more as having a skill that they have trained with discipline? Or does the power come from outside of them?")]
+            [Prompt("Do you see your character more as having intuitive powers, or more as having a skill that they have trained with discipline? Or does the power come from outside of them? {||}")]
             public Question6options? Choice6;
 
             // Intuitive type classes: { BarbarianValue++; FighterValue++; SorcererValue++; }
@@ -99,91 +99,97 @@ namespace CharacterCreationBot
                       
                          await context.PostAsync("OK, let's see what we come up with.");
                          finalClass = TestResults();
+                         await context.PostAsync("You Chose: " + finalClass);
+
                      };
 
                 return new FormBuilder<QuizForm>()
                              .Message("OK, let's get started.")
-                              .Field(nameof(Choice1))
-
-                            .Confirm(async (state) =>
-                                  {
-
+                              .Field(nameof(Choice1),
+                              validate: async (state, response) =>
+                              {
+                                      var result = new ValidateResult { IsValid = true, Value = response };
                                       switch (state.Choice1)
                                       {
-                                          case Question1options.weapons: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
-                                          case Question1options.magic: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++;  break;
+                                          case Question1options.weapons: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
+                                          case Question1options.magic: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++;  break;
                                           case Question1options.both: BardValue++; PaladinValue++; ClericValue++; DruidValue++; WarlockValue++; RogueValue++; RangerValue++; break;
                                       }
-                                      return new PromptAttribute($"OK");
+                                      return result;
                                   })
 
-                              .Field(nameof(Choice2))
-                            .Confirm(async (state) =>
+                              .Field(nameof(Choice2),
+                               validate: async (state, response) =>
+                           
                             {
-
+                                var result = new ValidateResult { IsValid = true, Value = response };
                                 switch (state.Choice2)
                                 {
-                                    case Question2options.nature: MonkValue++; DruidValue++; RangerValue++; break;
-                                    case Question2options.arcane: BardValue++; SorcererValue++; WizardValue++; break;
-                                    case Question2options.diety: PaladinValue++; ClericValue++; WarlockValue++; break;
-                                    case Question2options.none: BarbarianValue++; FighterValue++; RogueValue++; break;
+                                    case Question2options.nature: MonkValue++; DruidValue++; RangerValue++; MonkValue++; DruidValue++; RangerValue++; break;
+                                    case Question2options.arcane: BardValue++; SorcererValue++; WizardValue++; BardValue++; SorcererValue++; WizardValue++; break;
+                                    case Question2options.diety: PaladinValue++; ClericValue++; WarlockValue++; PaladinValue++; ClericValue++; WarlockValue++; break;
+                                    case Question2options.none: BarbarianValue++; FighterValue++; RogueValue++; BarbarianValue++; FighterValue++; RogueValue++; break;
                                 }
-                                return new PromptAttribute($"OK");
+                                return result;
                             })
 
-                              .Field(nameof(Choice3))
-                            .Confirm(async (state) =>
-                            {
-
+                              .Field(nameof(Choice3),
+                             validate: async (state, response) =>
+                           {
+                                var result = new ValidateResult { IsValid = true, Value = response };
                                 switch (state.Choice3)
                                 {
                                     case Question3options.self_reliant: BarbarianValue++; FighterValue++; DruidValue++; PaladinValue++; RogueValue++; SorcererValue++; RangerValue++; MonkValue++; break;
                                     case Question3options.team: BardValue++; WarlockValue++; WizardValue++; ClericValue++; break;
 
                                 }
-                                return new PromptAttribute($"OK");
+                                return result;
                             })
 
-                              .Field(nameof(HealerYesNo))
-                            .Confirm(async (state) =>
+                              .Field(nameof(HealerYesNo),
+                            validate: async (state, response) =>
                             {
-
+                                var result = new ValidateResult { IsValid = true, Value = response };
                                 switch (state.HealerYesNo)
                                 {
-                                    case true: ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; break;
+                                    case true: ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; break;
                                     case false: FighterValue++; BarbarianValue++; PaladinValue++; MonkValue++; WarlockValue++; RogueValue++; WizardValue++; SorcererValue++; break;
 
                                 }
-                                return new PromptAttribute($"OK");
+                                return result;
                             })
-                              .Field(nameof(PetYesNo))
-                            .Confirm(async (state) =>
-                            {
-
-                                switch (state.PetYesNo)
+                              .Field(nameof(PetYesNo),
+                               validate: async (state, response) =>
+                               {
+                                   var result = new ValidateResult { IsValid = true, Value = response };
+                                   switch (state.PetYesNo)
                                 {
-                                    case true: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
-                                    case false: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
+                                    case false: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; BardValue++; break;
+                                    case true:  ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; RangerValue++; RangerValue++;  BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
                                 }
-                                return new PromptAttribute($"OK");
-                            })
-                              .Field(nameof(Choice6))
-                            .Confirm(async (state) =>
+                                   return result;
+                               })
+                              .Field(nameof(Choice6), 
+                            validate: async (state, response) =>
                             {
-
+                                var result = new ValidateResult { IsValid = true, Value = response };
                                 switch (state.Choice6)
                                 {
                                     case Question6options.inuitive: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
                                     case Question6options.skill: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
                                     case Question6options.outside: break;
                                 }
-                                return new PromptAttribute($"OK");
+                                return result;
                             })
 
                            .AddRemainingFields()
-
+                           .Message("Thanks for taking the quiz. Let's see what you came up with.")
+                           
                           .OnCompletion(processQuiz)
+                          
                           .Build();
+                
+
             }
 
 
@@ -199,20 +205,20 @@ namespace CharacterCreationBot
                 ClassChoiceList.Sort();
 
                 //make that the finalClass
-                string SortedClass = "PlaceHolder";
+                string SortedClass = "No Valid Class";
 
-                if (ClassChoiceList[1] == BarbarianValue) { SortedClass = "Barbarian"; }
-                if (ClassChoiceList[1] == BardValue) { SortedClass = "Bard"; }
-                if (ClassChoiceList[1] == ClericValue) { SortedClass = "Cleric"; }
-                if (ClassChoiceList[1] == DruidValue) { SortedClass = "Druid"; }
-                if (ClassChoiceList[1] == FighterValue) { SortedClass = "Fighter"; }
-                if (ClassChoiceList[1] == MonkValue) { SortedClass = "Monk"; }
-                if (ClassChoiceList[1] == RangerValue) { SortedClass = "Ranger"; }
-                if (ClassChoiceList[1] == RogueValue) { SortedClass = "Rogue"; }
-                if (ClassChoiceList[1] == PaladinValue) { SortedClass = "Paladin"; }
-                if (ClassChoiceList[1] == SorcererValue) { SortedClass = "Sorcerer"; }
-                if (ClassChoiceList[1] == WarlockValue) { SortedClass = "Warlock"; }
-                if (ClassChoiceList[1] == WizardValue) { SortedClass = "Wizard"; }
+                if (ClassChoiceList[0] == BarbarianValue) { SortedClass = "Barbarian";  }
+                if (ClassChoiceList[0] == BardValue) { SortedClass = "Bard";  }
+                if (ClassChoiceList[0] == ClericValue) { SortedClass = "Cleric"; }
+                if (ClassChoiceList[0] == DruidValue) { SortedClass = "Druid";  }
+                if (ClassChoiceList[0] == FighterValue) { SortedClass = "Fighter"; }
+                if (ClassChoiceList[0] == MonkValue) { SortedClass = "Monk";  }
+                if (ClassChoiceList[0] == RangerValue) { SortedClass = "Ranger";  }
+                if (ClassChoiceList[0] == RogueValue) { SortedClass = "Rogue"; }
+                if (ClassChoiceList[0] == PaladinValue) { SortedClass = "Paladin"; }
+                if (ClassChoiceList[0] == SorcererValue) { SortedClass = "Sorcerer";  }
+                if (ClassChoiceList[0] == WarlockValue) { SortedClass = "Warlock";  }
+                if (ClassChoiceList[0] == WizardValue) { SortedClass = "Wizard";  }
 
                 //TO DO
                 //handle ties

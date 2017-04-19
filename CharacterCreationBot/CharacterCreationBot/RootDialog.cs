@@ -17,6 +17,8 @@ namespace CharacterCreationBot
     [Serializable]
     public class RootDialog : IDialog<object> 
     {
+
+        TakeTheTest.QuizForm ourtest;
         private ResumptionCookie resumptionCookie;
 
         public async Task StartAsync(IDialogContext context)
@@ -130,8 +132,12 @@ namespace CharacterCreationBot
         private async Task TestMessageAsync(IDialogContext context)
         {
 
-            var dialog = new LUISRoot();
-            context.Call(dialog, GetUserResponse);
+            IFormDialog<TakeTheTest.QuizForm> dialog = MakeRootDialog();
+            context.Call(dialog, GetUserResponse);    
+       }
+        internal static IFormDialog<TakeTheTest.QuizForm> MakeRootDialog()
+        {
+            return FormDialog.FromForm(TakeTheTest.QuizForm.BuildForm, options: FormOptions.PromptInStart);
         }
 
         private async Task BuildMessageAsync(IDialogContext context)
