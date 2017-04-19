@@ -118,6 +118,19 @@
   <ItemGroup>
     <Content Include="default.htm" />
     <Content Include="Global.asax" />
+    <Content Include="Media\barbarian-sm.png" />
+    <Content Include="Media\bard-sm.png" />
+    <Content Include="Media\cleric-sm.png" />
+    <Content Include="Media\Druid-sm.png" />
+    <Content Include="Media\fighter-sm.png" />
+    <Content Include="Media\monk-sm.png" />
+    <Content Include="Media\paladin-sm.png" />
+    <Content Include="Media\Races_Elf.png" />
+    <Content Include="Media\ranger-sm.png" />
+    <Content Include="Media\rogue-sm.png" />
+    <Content Include="Media\sorcerer-sm.png" />
+    <Content Include="Media\warlock-sm.png" />
+    <Content Include="Media\wizard-sm.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

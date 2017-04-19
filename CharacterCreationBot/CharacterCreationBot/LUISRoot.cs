@@ -39,34 +39,35 @@ namespace CharacterCreationBot
             context.Wait(MessageReceived);
         }
 
-        [LuisIntent("Done")]
-        public async Task Done(IDialogContext context, LuisResult result)
+        [LuisIntent("Back")]
+        public async Task Back(IDialogContext context, LuisResult result)
         {
             //None is the default response
             string message = "Go back to beginning";
             await context.PostAsync(message);
-            context.Done("Back");
+            context.Done(result);
         }
 
 
         [LuisIntent("Test")]
         public async Task Test(IDialogContext context, LuisResult result)
         {
-            string message = "Let's get started taking the test.";
+            context.Done(result);
+            //string message = "Let's get started taking the test.";
       
-                await context.PostAsync(message);
+            //    await context.PostAsync(message);
 
-                //Run Take the Test
-               var feedbackForm = new FormDialog<TakeTheTest.QuizForm>(new TakeTheTest.QuizForm(), TakeTheTest.QuizForm.BuildForm, FormOptions.PromptInStart);
+            //    //Run Take the Test
+            //   var feedbackForm = new FormDialog<TakeTheTest.QuizForm>(new TakeTheTest.QuizForm(), TakeTheTest.QuizForm.BuildForm, FormOptions.PromptInStart);
 
-                string TestMe = TakeTheTest.QuizForm.TestResults();
+            //    string TestMe = TakeTheTest.QuizForm.TestResults();
 
 
-            // Figure out what FinalClass is from the test
-            StoredUserVals.PlayerCharacter.MyClass = TestMe;
+            //// Figure out what FinalClass is from the test
+            //StoredUserVals.PlayerCharacter.MyClass = TestMe;
    
-            context.Wait(MessageReceived);
-            await context.PostAsync("You Chose " + StoredUserVals.PlayerCharacter.MyClass);
+            //context.Wait(MessageReceived);
+            //await context.PostAsync("You Chose " + StoredUserVals.PlayerCharacter.MyClass);
 
         }
 
@@ -210,11 +211,81 @@ namespace CharacterCreationBot
                             }
 
                             await context.PostAsync(resultMessage);
+                            await this.CategoryEnd(context);
+                        }
+
+                        if (entityItem.Entity == "attributes" || entityItem.Entity == "atribute")
+                        {
+                            if (AbilitiesDictionary.abilitiesDictionary.Count < 1)
+                            {
+                                AbilitiesDictionary.BuildAbilitiesFromJSON();
+                            }
+
+                            var resultMessage = context.MakeMessage();
+                            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                            resultMessage.Attachments = new List<Attachment>();
+                            List<HeroCard> information = AbilitiesCards();
+                            foreach (var card in information)
+                            {
+                                resultMessage.Attachments.Add(card.ToAttachment());
+                            }
+
+                            await context.PostAsync(resultMessage);
+                            await this.CategoryEnd(context);
                         }
                     }
                 }
             }
      
+        }
+
+        public async Task CategoryEnd(IDialogContext context)
+        {
+            var result = context.MakeMessage();
+
+            //await context.PostAsync("What Category would you like to know about next? Or type what you would like to know about ");
+            HeroCard card = new HeroCard()
+            {
+                Title = "",
+                Subtitle = "",
+                Text = "What Category would you like to know about next? Or type what you would like to know about.",
+                Images = new List<CardImage>()
+                        {
+                            new CardImage() { Url = "" }
+                        },
+
+                Buttons = new List<CardAction>()
+                        {
+                            new CardAction()
+                            {
+                                Title = "Classes",
+                                Type = ActionTypes.ImBack,
+                                Value = "Classes"
+                            },
+                            new CardAction()
+                            {
+                                Title = "Races",
+                                Type = ActionTypes.ImBack,
+                                Value = "Races"
+                            },
+                            new CardAction()
+                            {
+                                Title = "Backgrounds",
+                                Type = ActionTypes.ImBack,
+                                Value = "Backgrounds"
+                            },
+                            new CardAction()
+                            {
+                                Title = "Attributes",
+                                Type = ActionTypes.ImBack,
+                                Value = "Attributes"
+                            }
+                        }
+
+            };
+            result.Attachments.Add(card.ToAttachment());
+            await context.PostAsync(result);
+            
         }
 
         public async Task JoinConfirmation(IDialogContext context, IAwaitable<bool> argument)
@@ -229,6 +300,43 @@ namespace CharacterCreationBot
                 await context.PostAsync("You should reconsider. The City of Light will take away all pain.");
             }
             context.Wait(MessageReceived);
+        }
+
+        private List<HeroCard> AbilitiesCards()
+        {
+            List<HeroCard> cards = new List<HeroCard>();
+            for (int i = 0; i < AbilitiesDictionary.abilitiesDictionary.Count; i++)
+            {
+                Abilities curAbilities = AbilitiesDictionary.abilitiesDictionary.ElementAt(i).Value;
+                var racialIncreaseString = "";
+                for (int j = 0; j < curAbilities.RacialIncrease.Count; j++)
+                {
+                    racialIncreaseString = racialIncreaseString + "* " + curAbilities.RacialIncrease[j] + " \n ";
+                }
+                HeroCard backgroundHeroCard = new HeroCard()
+                {
+                    Title = curAbilities.Name,
+                    Subtitle = "Measures: " + curAbilities.Measures + " | Important for: " + curAbilities.ImportantFor,
+                    Text = "Racial Increase: \n " + racialIncreaseString,
+                    Images = new List<CardImage>()
+                        {
+                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
+                        },
+
+                    Buttons = new List<CardAction>()
+                        {
+                            new CardAction()
+                            {
+                                Title = "Go to site",
+                                Type = ActionTypes.OpenUrl,
+                                Value = "http://dnd.wizards.com/dungeons-and-dragons/what-is-dd/classes"
+                            }
+                        }
+
+                };
+                cards.Add(backgroundHeroCard);
+            }
+            return cards;
         }
 
         private List<HeroCard> BackgroundsCards()

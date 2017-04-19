@@ -10,6 +10,7 @@ using Microsoft.Bot.Connector;
 using CharacterCreationBot.Properties;
 using static CharacterCreationBot.TakeTheTest;
 using Microsoft.Bot.Builder.FormFlow;
+using CharacterCreationBot.Models;
 
 namespace CharacterCreationBot
 {
@@ -20,6 +21,8 @@ namespace CharacterCreationBot
 
         public async Task StartAsync(IDialogContext context)
         {
+            await context.PostAsync(Resources.RootDialog_Welcome_Message);
+
             context.Wait(this.MessageReceivedAsync);
         }
 
@@ -46,7 +49,6 @@ namespace CharacterCreationBot
             HeroCard heroCard = CreateWelcomeHeroCard();
             resultMessage.Attachments.Add(heroCard.ToAttachment());
 
-            await context.PostAsync(Resources.RootDialog_Welcome_Message);
 
             await context.PostAsync(resultMessage);
 
@@ -97,11 +99,11 @@ namespace CharacterCreationBot
             switch (message.Text)
             {
                 case "LearnMore":
-                    response = "Okay, building a character is super fun but if you're new to D&D you might be a little overwhelmed. I'm here to help. Each Player Character has: \n\n"
-                    + "* Class - What you do \n\n"
-                    + "* Race - Who you are \n\n"
-                    + "* Background - Where you come from \n\n"
-                    + "* Alignment - How you behave \n\n"
+                    response = "Okay, building a character is super fun but if you're new to D&D you might be a little overwhelmed. I'm here to help. Each Player Character has: \n"
+                    + "* Class - What you do \n"
+                    + "* Race - Who you are \n"
+                    + "* Background - Where you come from \n"
+                    + "* Alignment - How you behave \n"
                     + "* Abilities - How well you do, what you do ";
                     await context.PostAsync(response);
 
@@ -141,27 +143,26 @@ namespace CharacterCreationBot
         private async Task LearnMoreMessageAsync(IDialogContext context)
         {
             //If we put the new carolsel here it will not register the users input for the ListDialog and will need the user to select which option they would like to know more about twice...
-            //var resultMessage = context.MakeMessage();
-            //resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
-            //resultMessage.Attachments = new List<Attachment>();
-            //List<HeroCard> information = CategoryCards();
-            //foreach (var card in information)
-            //{
-            //    resultMessage.Attachments.Add(card.ToAttachment());
-            //}
+            var resultMessage = context.MakeMessage();
+            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+            resultMessage.Attachments = new List<Attachment>();
+            List<HeroCard> information = CategoryCards();
+            foreach (var card in information)
+            {
+                resultMessage.Attachments.Add(card.ToAttachment());
+            }
 
-            //await context.PostAsync(resultMessage);
+            await context.PostAsync(resultMessage);
             ////await context.PostAsync(endMessage);
 
             //context.Wait(this.OnOptionSelected);
 
             //var dialog = new ListsDialog();
             var dialog = new LUISRoot();
-            context.Call(dialog, GetUserResponse);
+            context.Call(dialog, this.BackFromLuis);
         }
-
-
       
+
         public List<HeroCard> CategoryCards()
         {
             List<HeroCard> cards = new List<HeroCard>();
@@ -177,7 +178,13 @@ namespace CharacterCreationBot
                         {
                             new CardAction()
                             {
-                                Title = "Learn more about Races",
+                                Title = "Go to site",
+                                Type = ActionTypes.OpenUrl,
+                                Value = "http://dnd.wizards.com/dungeons-and-dragons/what-is-dd/races"
+                            },
+                            new CardAction()
+                            {
+                                Title = "List Races",
                                 Type = ActionTypes.ImBack,
                                 Value = "Races"
                             }
@@ -196,7 +203,13 @@ namespace CharacterCreationBot
                         {
                             new CardAction()
                             {
-                                Title = "Learn more about Classes",
+                                Title = "Go to site",
+                                Type = ActionTypes.OpenUrl,
+                                Value = "http://dnd.wizards.com/dungeons-and-dragons/what-is-dd/classes"
+                            },
+                            new CardAction()
+                            {
+                                Title = "List the Classes",
                                 Type = ActionTypes.ImBack,
                                 Value = "Classes"
                             }
@@ -223,7 +236,7 @@ namespace CharacterCreationBot
                 await context.PostAsync("You chose: " + message.Text);
 
                 var dialog = new LUISRoot();
-                context.Call(dialog, GetUserResponse);
+                context.Call(dialog, this.GetUserResponse);
             }
             else
             {
@@ -231,16 +244,11 @@ namespace CharacterCreationBot
             }
         }
 
-        private async Task GetUserResponse(IDialogContext context, IAwaitable<string> result)
-        {
-            string message = await result;
-            await this.ProcessMessageReceived(context, message);
-        }
 
         private async Task GetUserResponse(IDialogContext context, IAwaitable<object> result)
         {
-            //string message = await result;
-            //await this.ProcessMessageReceived(context, message);
+            string message = "";
+            await this.ProcessMessageReceived(context, message);
         }
 
         public async Task ProcessMessageReceived(IDialogContext context, string response)
@@ -258,12 +266,36 @@ namespace CharacterCreationBot
             }
         }
 
-        private async Task BackFromLuis(IDialogContext context, IAwaitable<string> result)
+        protected async Task BackFromLuis(IDialogContext context, IAwaitable<object> result)
         {
+            // Returning from LUIS
+            LuisResult response = (LuisResult) result;
+            //string lol = response.; 
             
-            await context.PostAsync("FML");
+            foreach (var intent in response.Intents)
+            {
+                if (intent.Intent == "Back")
+                {
+                    await StartOverAsync(context);
+                }
+                if (intent.Intent == "Test")
+                {
+                    await this.TestMessageAsync(context);
+                }
+                if (intent.Intent == "Build")
+                {
+                    await this.TestMessageAsync(context);
+                }
+            }
+           
+            
         }
 
+        private async Task StartOverAsync(IDialogContext context)
+        {
+            await this.WelcomeMessageAsync(context);
+
+        }
 
         private async Task StartOverAsync(IDialogContext context, string text)
         {
