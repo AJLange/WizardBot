@@ -87,14 +87,6 @@ namespace CharacterCreationBot
 
         protected async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
-            //var message = await result;
-            //if(message.Text == "Classes")
-            //{
-            //    await this.ReturnClasses(context);
-            //}
-
-            //await context.PostAsync(message);
-
             var message = await result;
 
             if(message.Text == "Classes")

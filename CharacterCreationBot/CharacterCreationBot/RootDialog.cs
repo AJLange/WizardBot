@@ -11,6 +11,7 @@ using CharacterCreationBot.Properties;
 using static CharacterCreationBot.TakeTheTest;
 using Microsoft.Bot.Builder.FormFlow;
 using CharacterCreationBot.Models;
+using System.Diagnostics;
 
 namespace CharacterCreationBot
 {
@@ -120,7 +121,7 @@ namespace CharacterCreationBot
                 case "Build":
                     response = "Let's build your character now!";
                     await context.PostAsync(response);
-                    await this.BuildMessageAsync(context);
+                    await this.BuildCharacter(context);
                     break;
                 default:
                     await this.StartOverAsync(context, message.Text);
@@ -140,7 +141,7 @@ namespace CharacterCreationBot
             return FormDialog.FromForm(TakeTheTest.QuizForm.BuildForm, options: FormOptions.PromptInStart);
         }
 
-        private async Task BuildMessageAsync(IDialogContext context)
+        private async Task BuildCharacter(IDialogContext context)
         {
             var dialog = new CreateACharacter();
             context.Call(dialog, GetUserResponse);
@@ -165,9 +166,10 @@ namespace CharacterCreationBot
 
             //var dialog = new ListsDialog();
             var dialog = new LUISRoot();
-            context.Call(dialog, this.BackFromLuis);
+            context.Call<ContextPasser>(dialog, this.BackFromLuis);
+
         }
-      
+
 
         public List<HeroCard> CategoryCards()
         {
@@ -272,29 +274,38 @@ namespace CharacterCreationBot
             }
         }
 
-        protected async Task BackFromLuis(IDialogContext context, IAwaitable<object> result)
+        private async Task BackFromLuis(IDialogContext context, IAwaitable<ContextPasser> result)
         {
             // Returning from LUIS
-            LuisResult response = (LuisResult) result;
-            //string lol = response.; 
-            
-            foreach (var intent in response.Intents)
+            ContextPasser cp = null;
+            try
             {
-                if (intent.Intent == "Back")
-                {
-                    await StartOverAsync(context);
-                }
-                if (intent.Intent == "Test")
-                {
-                    await this.TestMessageAsync(context);
-                }
-                if (intent.Intent == "Build")
-                {
-                    await this.TestMessageAsync(context);
-                }
+                cp = await result;
+                
             }
-           
-            
+            catch (OperationCanceledException)
+            {
+                await context.PostAsync("You canceled the form!");
+                return;
+            }
+
+            Debug.WriteLine(result);
+            switch (cp.Intent)
+            {
+                case "Back":                   
+                    await StartOverAsync(context);
+                    break;
+                case "Test":               
+                    await this.TestMessageAsync(context);
+                    break;
+                case "Build":              
+                    await this.BuildCharacter(context);
+                    break;
+                default:
+                    await StartOverAsync(context);
+                    break;
+            }
+
         }
 
         private async Task StartOverAsync(IDialogContext context)

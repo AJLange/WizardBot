@@ -183,7 +183,7 @@ namespace CharacterCreationBot
                             })
 
                            .AddRemainingFields()
-                           .Message("Thanks for taking the quiz. Let's see what you came up with.")
+                           .Message("Thanks for taking the quiz. Processing your result.")
                            
                           .OnCompletion(processQuiz)
                           
@@ -236,8 +236,6 @@ namespace CharacterCreationBot
                 var message = ("You Chose " + StoredUserVals.PlayerCharacter.MyClass);
 
                 await context.PostAsync(message);
-                //context.Wait(MessageReceived);
-
 
             }
 

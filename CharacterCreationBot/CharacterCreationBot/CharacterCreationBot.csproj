@@ -139,11 +139,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="CreateACharacter.cs" />
     <Compile Include="ListsDialog.cs" />
-    <Compile Include="LUISQueryDialog.cs" />
     <Compile Include="Models\BackgroundsDictionary.cs" />
+    <Compile Include="Models\ContextPasser.cs" />
     <Compile Include="RootDialog.cs" />
     <Compile Include="TakeTheTest.cs" />
-    <Compile Include="DictionaryBuilder.cs" />
     <Compile Include="Models\AbilitiesDictionary.cs" />
     <Compile Include="Models\CharacterModel.cs" />
     <Compile Include="CommandDialog.cs" />

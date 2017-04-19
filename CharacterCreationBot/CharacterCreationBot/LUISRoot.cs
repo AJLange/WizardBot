@@ -15,7 +15,7 @@ namespace CharacterCreationBot
 {
     [Serializable]
     [LuisModel("05c494f4-d639-490d-b551-970fef333bcb", "f2b59c258e5042a3b265498b92acd8a8")]
-    public class LUISRoot : LuisDialog<object>
+    public class LUISRoot : LuisDialog<ContextPasser> //LuisDialog<LuisResult>
     {
 
         //private async Task StartAsync(IDialogContext context, string result)
@@ -33,7 +33,7 @@ namespace CharacterCreationBot
         public async Task None(IDialogContext context, LuisResult result)
         {
             //None is the default response
-            string message = "I'm a helpful bot to help you learn more about D&D Character Creation, so you can create your own characters. Ask me about Races, Classes, Alignments, character Attributes, or character backgrounds. If you're not sure where to start, say 'I'm new'.";
+            string message = "I didn't quite understand that request, I'm still learning. Do you want to learn more? Ask me about Races, Classes, Alignments, character Attributes, or character Backgrounds. If you're not sure where to start, say 'I'm new'.";
 
             await context.PostAsync(message);
             context.Wait(MessageReceived);
@@ -44,8 +44,10 @@ namespace CharacterCreationBot
         {
             //None is the default response
             string message = "Go back to beginning";
-            await context.PostAsync(message);
-            context.Done(result);
+            //await context.PostAsync(message);
+            ContextPasser cp = new ContextPasser(result.Intents[0].Intent, result.Entities.ToList(), message);
+            context.Done(cp);
+            //context.Done(result);
         }
 
 
