@@ -188,10 +188,10 @@ namespace CharacterCreationBot
                 {
                     Title = curAttribute.Name,
                     Subtitle = curAttribute.Measures,
-                    Images = new List<CardImage>()
+                   /* Images = new List<CardImage>()
                         {
                             new CardImage() { Url = "https://dungeonblobs.blob.core.windows.net/pics/Races_Elf.png" }
-                        },
+                        }, */
                     Text = allSkills,
                     Buttons = new List<CardAction>()
                         {
@@ -262,7 +262,7 @@ namespace CharacterCreationBot
 
                     Images = new List<CardImage>()
                         {
-                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
+                            new CardImage() { Url = curClass.PicLink }
                         },
 
                     Buttons = new List<CardAction>()

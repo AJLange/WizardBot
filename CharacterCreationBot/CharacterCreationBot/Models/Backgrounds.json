@@ -3,6 +3,7 @@
     {
       "Name": "Acolyte",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Insight, Religion",
       "Languages": "Two of your choice",
       "Extra": "",
@@ -18,6 +19,7 @@
     {
       "Name": "Charlatan",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -33,6 +35,7 @@
     {
       "Name": "Criminal",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Equipment": [
@@ -47,6 +50,7 @@
     {
       "Name": "Entertainer",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -62,6 +66,7 @@
     {
       "Name": "Folk Hero",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -77,6 +82,7 @@
     {
       "Name": "Guild Artisan",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Equipment": [
@@ -91,6 +97,7 @@
     {
       "Name": "Hermit",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -106,6 +113,7 @@
     {
       "Name": "Noble",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Equipment": [
@@ -120,6 +128,7 @@
     {
       "Name": "Outlander",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -135,6 +144,7 @@
     {
       "Name": "Sage",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Equipment": [
@@ -149,6 +159,7 @@
     {
       "Name": "Sailor",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -164,6 +175,7 @@
     {
       "Name": "Soldier",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
@@ -179,6 +191,7 @@
     {
       "Name": "Urchin",
       "Description": "",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "Skill Proficiencies": "Natural athleticism, bodily power",
       "Languages": "Barbarian, fighter, paladin",
       "Extra": "",
