@@ -92,6 +92,32 @@ namespace CharacterCreationBot.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Alignment&quot;: [
+        ///    {
+        ///      &quot;Name&quot;: &quot;Lawful Good&quot;,
+        ///      &quot;Code&quot;: &quot;LG&quot;,
+        ///      &quot;Description&quot;: &quot;Can be counted on to do the right thing as expected by society.&quot;,
+        ///      &quot;PicLink&quot;: &quot;&quot;,
+        ///      &quot;WhoIs&quot;: &quot;Gold dragons, Paladins, most dwarves&quot;
+        ///    },
+        ///    {
+        ///      &quot;Name&quot;: &quot;Neutral Good&quot;,
+        ///      &quot;Code&quot;: &quot;NG&quot;,
+        ///      &quot;Description&quot;: &quot;Do the best they can to help others according to their needs.&quot;,
+        ///      &quot;PicLink&quot;: &quot;&quot;,
+        ///      &quot;WhoIs&quot;: &quot;Many celestials, cloud giants, most gnomes&quot;
+        ///    },
+        ///    {
+        ///      &quot;Name&quot;: &quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AlignmentsJSON {
+            get {
+                return ResourceManager.GetString("AlignmentsJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Background&quot;: [
         ///    {
         ///      &quot;Name&quot;: &quot;Acolyte&quot;,

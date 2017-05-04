@@ -216,6 +216,26 @@ namespace CharacterCreationBot
                             await context.PostAsync(resultMessage);
                             await this.CategoryEnd(context);
                         }
+
+                        if (entityItem.Entity == "alignments" || entityItem.Entity == "alignment")
+                        {
+                            if (AlignmentDictionary.alignmentsDictionary.Count < 1)
+                            {
+                                AlignmentDictionary.BuildAlignmentsFromJSON();
+                            }
+
+                            var resultMessage = context.MakeMessage();
+                            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                            resultMessage.Attachments = new List<Attachment>();
+                            List<HeroCard> information = AlignmentCards();
+                            foreach (var card in information)
+                            {
+                                resultMessage.Attachments.Add(card.ToAttachment());
+                            }
+
+                            await context.PostAsync(resultMessage);
+                            await this.CategoryEnd(context);
+                        }
                     }
                 }
             }
@@ -262,6 +282,12 @@ namespace CharacterCreationBot
                                 Title = "Attributes",
                                 Type = ActionTypes.ImBack,
                                 Value = "Attributes"
+                            },
+                            new CardAction()
+                            {
+                                Title = "Alignment",
+                                Type = ActionTypes.ImBack,
+                                Value = "Alignment"
                             }
                         }
 
@@ -430,6 +456,34 @@ namespace CharacterCreationBot
                 cards.Add(raceHeroCard);
             }
 
+            return cards;
+        }
+
+
+        private List<HeroCard> AlignmentCards()
+        {
+            List<HeroCard> cards = new List<HeroCard>();
+            for (int i = 0; i < AlignmentDictionary.alignmentsDictionary.Count; i++)
+            {
+                Alignments curAlignment = AlignmentDictionary.alignmentsDictionary.ElementAt(i).Value;
+                var profString = curAlignment.Description + " \n\n";
+                HeroCard alignmentHeroCard = new HeroCard()
+                {
+                    Title = curAlignment.Name,
+                    Subtitle = curAlignment.Description,
+                    Images = new List<CardImage>()
+                        {
+                             new CardImage() { Url = curAlignment.PicLink }
+                    },
+
+                    Buttons = new List<CardAction>()
+                        {
+
+                        }
+
+                };
+                cards.Add(alignmentHeroCard);
+            }
             return cards;
         }
 

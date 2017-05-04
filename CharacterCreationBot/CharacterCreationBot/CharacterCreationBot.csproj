@@ -172,6 +172,7 @@
     <Content Include="Models\ClassesJSON.json" />
     <Content Include="Models\Abilities.json" />
     <Content Include="Models\Backgrounds.json" />
+    <Content Include="Models\Alignments.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

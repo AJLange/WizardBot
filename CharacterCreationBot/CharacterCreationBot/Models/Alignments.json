@@ -1,0 +1,60 @@
+﻿{
+  "Alignment": [
+    {
+      "Name": "Lawful Good",
+      "Code": "LG",
+      "Description": "Can be counted on to do the right thing as expected by society.",
+      "PicLink": "",
+      "WhoIs": "Gold dragons, Paladins, most dwarves"
+    },
+    {
+      "Name": "Neutral Good",
+      "Code": "NG",
+      "Description": "Do the best they can to help others according to their needs.",
+      "PicLink": "",
+      "WhoIs": "Many celestials, cloud giants, most gnomes"
+    },
+    {
+      "Name": "Chaotic Good",
+      "Code": "CG",
+      "Description": "Act as their conscience directs, with little regard for what others expect.",
+      "PicLink": "",
+      "WhoIs": "Copper dragons, many elves, unicorns"
+    },
+    {
+      "Name": "Lawful Neutral",
+      "Code": "LN",
+      "Description": "Act in accordance with law, tradition, or a personal code.",
+      "PicLink": "",
+      "WhoIs": "Many monks, many wizards"
+    },
+    {
+      "Name": "Neutral",
+      "Code": "N",
+      "Description": "Prefer to steer clear of moral questions and do not take sides, just do what seems best at the time.",
+      "PicLink": "",
+      "WhoIs": "Lizardfolk, most druids, many humans"
+    },
+    {
+      "Name": "Lawful Evil",
+      "Code": "LE",
+      "Description": "Methodically take what they want, within the limits of a code of tradition, loyalty, or order.",
+      "PicLink": "",
+      "WhoIs": "Devils, blue dragons, hobgoblins"
+    },
+    {
+      "Name": "Neutral Evil",
+      "Code": "NE",
+      "Description": "Those who do whatever they can get away with, without compassion or qualms.",
+      "PicLink": "",
+      "WhoIs": "Many drow, some cloud giants, yugoloths"
+    },
+    {
+      "Name": "Chaotic Evil",
+      "Code": "CE",
+      "Description": "Act with arbitrary violence, spurred by greed, hatred, or bloodlust.",
+      "PicLink": "",
+      "WhoIs": "Demons, red dragons, orcs"
+    }
+  ]
+}
