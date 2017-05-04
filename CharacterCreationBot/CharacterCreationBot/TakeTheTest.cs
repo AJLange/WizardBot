@@ -49,46 +49,25 @@ namespace CharacterCreationBot
 
             public Question1options? Choice1;
 
-            //if(Choice1 = 1){ BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; }
-            //magic classes: { BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; }
-            // combo classes: { BardValue++; PaladinValue++; ClericValue++; DruidValue++; WarlockValue++; RogueValue++; RangerValue++; }
-
+         
             [Prompt("Do you feel like your character would be in tune with nature, in tune with arcane forces, or rely on a deity or outsider for their power? (Or None of the above?) {||}")]
             public Question2options? Choice2;
 
-            //Natural: { MonkValue++; DruidValue++; RangerValue++; }
-            //    Arcane { BardValue++; SorcererValue++; WizardValue++; }
-            //   diety classes: { PaladinValue++; ClericValue++; WarlockValue++; }
-            //   nada { BarbarianValue++; FighterValue++; RogueValue++; }
-
+           
             [Prompt("Would you like a character that’s more self-reliant, or one that shines best in a team situation? {||}")]
             public Question3options? Choice3;
 
-            //Self { BarbarianValue++; FighterValue++; DruidValue++; PaladinValue++; RogueValue++; SorcererValue++; RangerValue++; MonkValue++; }
-            //    Teamwork { BardValue++; WarlockValue++; WizardValue++; ClericValue++; }
-
-
-
+           
             [Prompt("Do you want a character that can heal other party members? {||} ")]
             public bool? HealerYesNo;
-            //Canheal { ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; }
-            // noheal { FighterValue++; BarbarianValue++; PaladinValue++; MonkValue++; WarlockValue++; RogueValue++; WizardValue++; SorcererValue++; }
-
+   
 
             [Prompt("Do you want a character who might fight alongside a pet? {||}")]
             public bool? PetYesNo;
 
-            // Canpet { DruidValue++; WizardValue++; RangerValue++; WarlockValue++; }
-            //        nopet { ClericValue++; BardValue++; FighterValue++; BarbarianValue++; PaladinValue++; MonkValue++; RogueValue++; SorcererValue++; }
-
-
 
             [Prompt("Do you see your character more as having intuitive powers, or more as having a skill that they have trained with discipline? Or does the power come from outside of them? {||}")]
             public Question6options? Choice6;
-
-            // Intuitive type classes: { BarbarianValue++; FighterValue++; SorcererValue++; }
-            //            Disciplined type classes: { BardValue++; MonkValue++; WizardValue++; RogueValue++; RangerValue++; }
-            //          Otherworldly type classes: { ClericValue++; DruidValue++; PaladinValue++; WarlockValue++; }
 
 
   

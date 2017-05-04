@@ -379,8 +379,8 @@ namespace CharacterCreationBot
                     Subtitle = profString.ToString(),
                     Images = new List<CardImage>()
                         {
-                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
-                        },
+                             new CardImage() { Url = curClass.PicLink }
+                    },
 
                     Buttons = new List<CardAction>()
                         {

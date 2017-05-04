@@ -54,16 +54,22 @@ namespace CharacterCreationBot.Models
     {
         [JsonProperty("Name")]
         public string Name { get; set; }
+
         [JsonProperty("Description")]
         public string Description { get; set; }
+
         [JsonProperty("PicLink")]
         public string PicLink { get; set; }
+
         [JsonProperty("MoreInfoLink")]
         public string MoreInfoLink { get; set; }
-        [JsonProperty("Proficiencies")]
+
+        [JsonProperty("Proficiences")]
         public Proficiencies Proficiencies { get; set; }
+
         [JsonProperty("Pros")]
         public string Pros { get; set; }
+
         [JsonProperty("Cons")]
         public string Cons { get; set; }
     }
