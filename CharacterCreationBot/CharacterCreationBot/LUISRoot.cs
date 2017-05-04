@@ -303,7 +303,7 @@ namespace CharacterCreationBot
                     Text = "Racial Increase: \n " + racialIncreaseString,
                     Images = new List<CardImage>()
                         {
-                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
+                           // new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
                         },
 
                     Buttons = new List<CardAction>()
@@ -341,8 +341,10 @@ namespace CharacterCreationBot
                     Text = "Hello",
                     Images = new List<CardImage>()
                         {
-                            new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
-                        },
+                            //new CardImage() { Url = "http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" }
+                           new CardImage() { Url = curBG.PicLink }
+
+                    },
 
                     Buttons = new List<CardAction>()
                         {

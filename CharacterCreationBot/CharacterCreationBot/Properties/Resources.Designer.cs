@@ -96,7 +96,9 @@ namespace CharacterCreationBot.Properties {
         ///    {
         ///      &quot;Name&quot;: &quot;Acolyte&quot;,
         ///      &quot;Description&quot;: &quot;&quot;,
+        ///      &quot;PicLink&quot;: &quot;https://dungeonblobs.blob.core.windows.net/pics/acolyte-sm.png&quot;,
         ///      &quot;Skill Proficiencies&quot;: &quot;Insight, Religion&quot;,
+        ///      &quot;Tool Proficiencies&quot;: &quot;&quot;,
         ///      &quot;Languages&quot;: &quot;Two of your choice&quot;,
         ///      &quot;Extra&quot;: &quot;&quot;,
         ///      &quot;Equipment&quot;: [
@@ -106,12 +108,7 @@ namespace CharacterCreationBot.Properties {
         ///        &quot;Vestments&quot;,
         ///        &quot;A set of common clothes&quot;,
         ///        &quot;15gp&quot;
-        ///      ]
-        ///    },
-        ///    {
-        ///      &quot;Name&quot;: &quot;Charlatan&quot;,
-        ///      &quot;Description&quot;: &quot;&quot;,
-        ///      &quot;Skill Proficiencies&quot;: &quot;Natural athlet [rest of string was truncated]&quot;;.
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BackgroundsJSON {
             get {
@@ -123,18 +120,16 @@ namespace CharacterCreationBot.Properties {
         ///   Looks up a localized string similar to {
         ///  &quot;Class&quot;:[
         ///    {
-        ///    &quot;Name&quot;:&quot;Barbarian&quot;,
-        ///    &quot;Description&quot;:&quot;A fierce warrior of primitive background who can enter a battle rage. &quot;,
-        ///    &quot;PicLink&quot;:&quot;&quot;,
-        ///    &quot;MoreInfoLink&quot;:&quot;&quot;,
-        ///    &quot;Proficiencies&quot;:{
-        ///      &quot;Armor&quot;:&quot;Light armor, medium armor, shields&quot;,
-        ///      &quot;Weapons&quot;:&quot;Simple weapons, martial weapons&quot;,
-        ///      &quot;Tools&quot;:&quot;None&quot;,
-        ///      &quot;Saving Throws&quot;:&quot;Strength, Constitution&quot;,
-        ///      &quot;Skills&quot;:&quot;Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival&quot;
-        ///    },
-        ///    &quot;Pros&quot;: [rest of string was truncated]&quot;;.
+        ///      &quot;Name&quot;: &quot;Barbarian&quot;,
+        ///      &quot;Description&quot;: &quot;A fierce warrior of primitive background who can enter a battle rage. &quot;,
+        ///      &quot;PicLink&quot;: &quot;https://dungeonblobs.blob.core.windows.net/pics/barbarian-sm.png&quot;,
+        ///      &quot;MoreInfoLink&quot;: &quot;&quot;,
+        ///      &quot;Proficiencies&quot;: {
+        ///        &quot;Armor&quot;: &quot;Light armor, medium armor, shields&quot;,
+        ///        &quot;Weapons&quot;: &quot;Simple weapons, martial weapons&quot;,
+        ///        &quot;Tools&quot;: &quot;None&quot;,
+        ///        &quot;Saving Throws&quot;: &quot;Strength, Constitution&quot;,
+        ///        &quot;Skills&quot;: &quot;Choose two from An [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ClassesJSON {
             get {

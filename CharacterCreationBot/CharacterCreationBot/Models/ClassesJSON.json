@@ -21,11 +21,11 @@
       "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
       "MoreInfoLink": "",
       "Proficiencies": {
-        "Armor": "Light armor, medium armor, shields",
-        "Weapons": "Simple weapons, martial weapons",
-        "Tools": "None",
-        "Saving Throws": "Strength, Constitution",
-        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+        "Armor": "Light armor",
+        "Weapons": "Simple weapons, hand crossbows, longswords, rapiers, short swords",
+        "Tools": "Three musical instruments of your choice",
+        "Saving Throws": "Dexterity, Charisma",
+        "Skills": "Choose any three"
       },
       "Pros": "",
       "Cons": ""
@@ -37,10 +37,10 @@
       "MoreInfoLink": "",
       "Proficiencies": {
         "Armor": "Light armor, medium armor, shields",
-        "Weapons": "Simple weapons, martial weapons",
+        "Weapons": "Simple weapons",
         "Tools": "None",
-        "Saving Throws": "Strength, Constitution",
-        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+        "Saving Throws": "Wisdom, Charisma",
+        "Skills": "Choose two from History, Insight, Medicine, Persuasion, and Religion"
       },
       "Pros": "",
       "Cons": ""
@@ -51,11 +51,11 @@
       "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/Druid-sm.png",
       "MoreInfoLink": "",
       "Proficiencies": {
-        "Armor": "Light armor, medium armor, shields",
-        "Weapons": "Simple weapons, martial weapons",
-        "Tools": "None",
-        "Saving Throws": "Strength, Constitution",
-        "Skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+        "Armor": "Light armor, medium armor, shields (no armor or shields made of metal)",
+        "Weapons": "Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
+        "Tools": "Herbalism kit",
+        "Saving Throws": "Intelligence, Wisdom",
+        "Skills": "Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
       },
       "Pros": "",
       "Cons": ""

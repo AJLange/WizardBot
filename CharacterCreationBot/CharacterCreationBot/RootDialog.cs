@@ -119,7 +119,7 @@ namespace CharacterCreationBot
                     await this.TestMessageAsync(context);
                     break;
                 case "Build":
-                    response = "Let's build your character now!";
+                    response = "Building a character...";
                     await context.PostAsync(response);
                     await this.BuildCharacter(context);
                     break;
@@ -143,8 +143,16 @@ namespace CharacterCreationBot
 
         private async Task BuildCharacter(IDialogContext context)
         {
+
+
+            await context.PostAsync("Thanks, character creation is not here yet but will be available soon at https://www.dndbeyond.com/");
+
+
+            //For now I'm taking away the 'create a character' because it's skeletal. won't use it in first demo. - AJ
+            /*
             var dialog = new CreateACharacter();
-            context.Call(dialog, GetUserResponse);
+            context.Call(dialog, GetUserResponse); */
+
         }
 
         private async Task LearnMoreMessageAsync(IDialogContext context)

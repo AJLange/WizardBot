@@ -204,9 +204,7 @@ namespace CharacterCreationBot
                 if (ClassChoiceList[0] == ClericValue) { SortedClass = "Cleric"; }
                 if (ClassChoiceList[0] == DruidValue) { SortedClass = "Druid";  }
                 if (ClassChoiceList[0] == FighterValue) { SortedClass = "Fighter"; }
-                if (ClassChoiceList[0] == MonkValue) { SortedClass = "Monk";  }
-               
-
+                if (ClassChoiceList[0] == MonkValue) { SortedClass = "Monk";  }        
                 if (ClassChoiceList[0] == RangerValue) { SortedClass = "Ranger";  }
                 if (ClassChoiceList[0] == RogueValue) { SortedClass = "Rogue"; }
                 if (ClassChoiceList[0] == PaladinValue) { SortedClass = "Paladin"; }

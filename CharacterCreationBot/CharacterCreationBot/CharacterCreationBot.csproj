@@ -139,6 +139,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="CreateACharacter.cs" />
     <Compile Include="ListsDialog.cs" />
+    <Compile Include="Models\AlignmentDictionary.cs" />
     <Compile Include="Models\BackgroundsDictionary.cs" />
     <Compile Include="Models\ContextPasser.cs" />
     <Compile Include="RootDialog.cs" />

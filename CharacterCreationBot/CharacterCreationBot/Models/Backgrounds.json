@@ -3,8 +3,9 @@
     {
       "Name": "Acolyte",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/acolyte-sm.png",
       "Skill Proficiencies": "Insight, Religion",
+      "Tool Proficiencies": "",
       "Languages": "Two of your choice",
       "Extra": "",
       "Equipment": [
@@ -20,188 +21,184 @@
       "Name": "Charlatan",
       "Description": "",
       "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "Skill Proficiencies": "Deception, Slight of Hand",
+      "Tool Proficiencies": "Disguise kit, Forgery kit",
+      "Languages": "",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
-        "A set of common clothes",
+        "A set of fine clothes",
+        "A disguise kit",
+        "Tools of the con of your choice (eg weighted dice)",
         "15gp"
       ]
     },
     {
       "Name": "Criminal",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/criminal-sm.png",
+      "Skill Proficiencies": "Deception, Stealth",
+      "Tool Proficiencies": "One type of gaming set, thieves' tools",
+      "Languages": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
-        "A set of common clothes",
+        "A crowbar",
+        "A dark set of common clothes with a hood",
         "15gp"
       ]
     },
     {
       "Name": "Entertainer",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/entertainer-sm.png",
+      "Skill Proficiencies": "Acrobatics, Performance",
+      "Tool Proficiencies": "Disguise kit, one type of musical instrument",
+      "Languages": "",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
-        "A set of common clothes",
+        "A musical instrument (your choice)",
+        "The favor of an admirer (eg, love letter or trinket)",
+        "a costume",
         "15gp"
       ]
     },
     {
       "Name": "Folk Hero",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/fighter-sm.png",
+      "Skill Proficiencies": "Animal Handling, Survival",
+      "Tool Proficiencies": "One type of artisan's tools, vehicles (land)",
+      "Languages": "",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
+        "A set of artisan's tools",
+        "A shovel",
+        "an iron pot",
         "A set of common clothes",
-        "15gp"
+        "10gp"
       ]
     },
     {
       "Name": "Guild Artisan",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/guild-artisan-sm.png",
+      "Skill Proficiencies": "Insight, Persuasion",
+      "Tool Proficiencies": "One type of artisan's tools",
+      "Languages": "One of your choice",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
-        "A set of common clothes",
+        "A set of artisan's tools",
+        "A letter of introduction from your guild",
+        "A set of traveler's clothes",
         "15gp"
       ]
     },
     {
       "Name": "Hermit",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/hermit-sm.png",
+      "Skill Proficiencies": "Medicine, Religion",
+      "Tool Proficiencies": "Herbalism kit",
+      "Languages": "One of your choice",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
+        "A scroll case of notes from your studies or prayers",
+        "A winter blanket",
+        "An herbalism kit",
         "A set of common clothes",
-        "15gp"
+        "5gp"
       ]
     },
     {
       "Name": "Noble",
       "Description": "",
       "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "Skill Proficiencies": "History, Persuasion",
+      "Tool Proficiencies": "One type of gaming set",
+      "Languages": "One of your choice",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
-        "A set of common clothes",
-        "15gp"
+        "A scroll of pedigree",
+        "A signet ring",
+        "A set of fine clothes",
+        "25gp"
       ]
     },
     {
       "Name": "Outlander",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/outlander-sm.png",
+      "Skill Proficiencies": "Athletics, Survival",
+      "Tool Proficiencies": "One type of musical instrument",
+      "Languages": "One of your choice",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
-        "A set of common clothes",
-        "15gp"
+        "A staff",
+        "A hunting trap",
+        "A trophy from an animal you killed",
+        "A set of travelers' clothes",
+        "10gp"
       ]
     },
     {
       "Name": "Sage",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/sage-sm.png",
+      "Skill Proficiencies": "Arcana, History",
+      "Tool Proficiencies": "",
+      "Languages": "Two of your choice",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
+        "A bottle of black ink",
+        "A quill",
+        "A small knife",
+        "A letter from a dead colleauge posing a question you have not yet been able to answer",
         "A set of common clothes",
-        "15gp"
+        "10gp"
       ]
     },
     {
       "Name": "Sailor",
       "Description": "",
       "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "Skill Proficiencies": "Athletics, Perception",
+      "Tool Proficiencies": "Navigator's Tools, Vehicles (water)",
+      "Languages": "",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
+        "A belaying pin (club)",
+        "50 feet of silk rope",
+        "a lucky charm (can be a random trinket)",
         "A set of common clothes",
-        "15gp"
+        "10gp"
       ]
     },
     {
       "Name": "Soldier",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/soldier-sm.png",
+      "Skill Proficiencies": "Athletics, Intimidation",
+      "Tool Proficiencies": "One type of gaming set, vehicles (land)",
+      "Languages": "",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
+        "An insignia of rank",
+        "a trophy from a fallen enemy",
+        "a set of bone dice or deck of cards",
         "A set of common clothes",
-        "15gp"
+        "10gp"
       ]
     },
     {
       "Name": "Urchin",
       "Description": "",
-      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/bard-sm.png",
-      "Skill Proficiencies": "Natural athleticism, bodily power",
-      "Languages": "Barbarian, fighter, paladin",
+      "PicLink": "https://dungeonblobs.blob.core.windows.net/pics/hermit-sm.png",
+      "Skill Proficiencies": "Sleight of Hand, Stealth",
+      "Tool Proficiencies": "Disguise Kit, Thieves' Tools",
+      "Languages": "",
       "Extra": "",
       "Equipment": [
-        "A holy symbol",
-        "A prayer book or Prayer wheel",
-        "5 sticks of incense",
-        "Vestments",
+        "A small knife",
+        "A map of the city you grew up in",
+        "A pet mouse",
+        "A token to remember your parents by",
         "A set of common clothes",
-        "15gp"
+        "10gp"
       ]
     }
 
