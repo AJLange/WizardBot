@@ -84,94 +84,18 @@ namespace CharacterCreationBot
 
                 return new FormBuilder<QuizForm>()
                              .Message("OK, let's get started.")
-                              .Field(nameof(Choice1))
-                               .Confirm(async (state) =>
-                               {
-                                 
-                                  switch (state.Choice1)
-                                  {
-                                      case Question1options.weapons: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
-                                      case Question1options.magic: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
-                                      case Question1options.both: BardValue++; PaladinValue++; ClericValue++; DruidValue++; WarlockValue++; RogueValue++; RangerValue++; break;
-                                  }
-                                   return new PromptAttribute("Thanks, choose OK to continue.");
-                               })
-                              .Field(nameof(Choice2))
-                             .Confirm(async (state) =>
-                                      {
-                                          switch (state.Choice2)
-                                          {
-                                              case Question2options.nature: MonkValue++; DruidValue++; RangerValue++; MonkValue++; DruidValue++; RangerValue++; break;
-                                              case Question2options.arcane: BardValue++; SorcererValue++; WizardValue++; BardValue++; SorcererValue++; WizardValue++; break;
-                                              case Question2options.diety: PaladinValue++; ClericValue++; WarlockValue++; PaladinValue++; ClericValue++; WarlockValue++; break;
-                                              case Question2options.none: BarbarianValue++; FighterValue++; RogueValue++; BarbarianValue++; FighterValue++; RogueValue++; break;
-                                          }
-                                          return new PromptAttribute("Thanks, choose OK to continue.");
-                                      })
-                            /*  .Field(nameof(Choice2),
-                               validate: async (state, response) =>
-                           
-                            {
-                                var result = new ValidateResult { IsValid = true, Value = response };
-                                switch (state.Choice2)
-                                {
-                                    case Question2options.nature: MonkValue++; DruidValue++; RangerValue++; MonkValue++; DruidValue++; RangerValue++; break;
-                                    case Question2options.arcane: BardValue++; SorcererValue++; WizardValue++; BardValue++; SorcererValue++; WizardValue++; break;
-                                    case Question2options.diety: PaladinValue++; ClericValue++; WarlockValue++; PaladinValue++; ClericValue++; WarlockValue++; break;
-                                    case Question2options.none: BarbarianValue++; FighterValue++; RogueValue++; BarbarianValue++; FighterValue++; RogueValue++; break;
-                                }
-                                //await;
-                                return result;
-                            }) */
+                              .Field(nameof(Choice1), validate: ValidateQuestion1)
 
-                              .Field(nameof(Choice3))
-                                   .Confirm(async (state) =>
-                                   {
-                              
-                                switch (state.Choice3)
-                                {
-                                    case Question3options.self_reliant: BarbarianValue++; FighterValue++; DruidValue++; PaladinValue++; RogueValue++; SorcererValue++; RangerValue++; MonkValue++; break;
-                                    case Question3options.team: BardValue++; WarlockValue++; WizardValue++; ClericValue++; break;
+                              .Field(nameof(Choice2), validate: ValidateQuestion2)
 
-                                }
-                                       return new PromptAttribute("Thanks, choose OK to continue.");
-                                   })
+                              .Field(nameof(Choice3), validate: ValidateQuestion3)
 
-                              .Field(nameof(HealerYesNo))
-                               .Confirm(async (state) =>
-                               {
-                            
-                                switch (state.HealerYesNo)
-                                {
-                                    case true: ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; break;
-                                    case false: FighterValue++; BarbarianValue++; PaladinValue++; MonkValue++; WarlockValue++; RogueValue++; WizardValue++; SorcererValue++; break;
+                              .Field(nameof(HealerYesNo), validate: ValidateHealing)
 
-                                }
-                                return new PromptAttribute("Thanks, choose OK to continue.");
-                            })
-                              .Field(nameof(PetYesNo))
-                                   .Confirm(async (state) =>
-                                   {
-                              
-                                   switch (state.PetYesNo)
-                                {
-                                    case false: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; BardValue++; break;
-                                    case true:  ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; RangerValue++; RangerValue++;  BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
-                                }
-                                   return new PromptAttribute("Thanks, choose OK to continue.");
-                               })
-                              .Field(nameof(Choice6))
-                                .Confirm(async (state) =>
-                                {
-                               
-                                switch (state.Choice6)
-                                {
-                                    case Question6options.inuitive: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
-                                    case Question6options.skill: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
-                                    case Question6options.outside: break;
-                                }
-                                return new PromptAttribute("Thanks, choose OK to continue.");
-                            })
+                              .Field(nameof(PetYesNo), validate: ValidatePet)
+
+                              .Field(nameof(Choice6), validate: ValidateQuestion6)
+
 
                            .AddRemainingFields()
                            .Message("Thanks for taking the quiz. Processing your result.")
@@ -183,7 +107,82 @@ namespace CharacterCreationBot
 
             }
 
+            private static async Task<ValidateResult> ValidateQuestion1(QuizForm state, object value)
+            {
+                var ChoiceMade = (Question1options)value;
+                switch (ChoiceMade)
+                {
+                    case Question1options.weapons: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
+                    case Question1options.magic: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
+                    case Question1options.both: BardValue++; PaladinValue++; ClericValue++; DruidValue++; WarlockValue++; RogueValue++; RangerValue++; break;
+                }
 
+                return new ValidateResult { IsValid = true, Value = value };
+            }
+
+
+            private static async Task<ValidateResult> ValidateQuestion2(QuizForm state, object value)
+            {
+                var ChoiceMade = (Question2options)value;
+                switch (ChoiceMade)
+                {
+                    case Question2options.nature: MonkValue++; DruidValue++; RangerValue++; MonkValue++; DruidValue++; RangerValue++; break;
+                    case Question2options.arcane: BardValue++; SorcererValue++; WizardValue++; BardValue++; SorcererValue++; WizardValue++; break;
+                    case Question2options.diety: PaladinValue++; ClericValue++; WarlockValue++; PaladinValue++; ClericValue++; WarlockValue++; break;
+                    case Question2options.none: BarbarianValue++; FighterValue++; RogueValue++; BarbarianValue++; FighterValue++; RogueValue++; break;
+                }
+
+                return new ValidateResult { IsValid = true, Value = value };
+            }
+
+            private static async Task<ValidateResult> ValidateQuestion3(QuizForm state, object value)
+            {
+                var ChoiceMade = (Question3options)value;
+                switch (ChoiceMade)
+                {
+                    case Question3options.self_reliant: BarbarianValue++; FighterValue++; DruidValue++; PaladinValue++; RogueValue++; SorcererValue++; RangerValue++; MonkValue++; break;
+                    case Question3options.team: BardValue++; WarlockValue++; WizardValue++; ClericValue++; break;
+                }
+
+                return new ValidateResult { IsValid = true, Value = value };
+            }
+
+            private static async Task<ValidateResult> ValidateHealing(QuizForm state, object value)
+            {
+                var TrueOrFalse = (bool)value;
+                switch (TrueOrFalse)
+                {
+                    case true: ClericValue++; BardValue++; DruidValue++; PaladinValue++; RangerValue++; ClericValue++; BardValue++; break;
+                    case false: FighterValue++; BarbarianValue++; PaladinValue++; MonkValue++; WarlockValue++; RogueValue++; WizardValue++; break;
+                }
+
+                return new ValidateResult { IsValid = true, Value = value };
+            }
+
+            private static async Task<ValidateResult> ValidatePet(QuizForm state, object value)
+            {
+                var TrueOrFalse = (bool)value;
+                switch (TrueOrFalse)
+                {
+                    case true: DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; RangerValue++; RangerValue++; BardValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
+                    case false: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; BardValue++; ClericValue++;  break;
+                }
+
+                return new ValidateResult { IsValid = true, Value = value };
+            }
+
+            private static async Task<ValidateResult> ValidateQuestion6(QuizForm state, object value)
+            {
+                var ChoiceMade = (Question6options)value;
+                switch (ChoiceMade)
+                {
+                    case Question6options.inuitive: BarbarianValue++; FighterValue++; MonkValue++; PaladinValue++; RogueValue++; RangerValue++; break;
+                    case Question6options.skill: BardValue++; ClericValue++; DruidValue++; SorcererValue++; WizardValue++; WarlockValue++; break;
+                    case Question6options.outside: break;
+                }
+
+                return new ValidateResult { IsValid = true, Value = value };
+            }
 
             public static string TestResults() {
 
@@ -199,18 +198,18 @@ namespace CharacterCreationBot
                 //make that the finalClass
                 string SortedClass = "No Valid Class";
 
-                if (ClassChoiceList[0] == BarbarianValue) { SortedClass = "Barbarian";  }
-                if (ClassChoiceList[0] == BardValue) { SortedClass = "Bard";  }
-                if (ClassChoiceList[0] == ClericValue) { SortedClass = "Cleric"; }
-                if (ClassChoiceList[0] == DruidValue) { SortedClass = "Druid";  }
-                if (ClassChoiceList[0] == FighterValue) { SortedClass = "Fighter"; }
-                if (ClassChoiceList[0] == MonkValue) { SortedClass = "Monk";  }        
-                if (ClassChoiceList[0] == RangerValue) { SortedClass = "Ranger";  }
-                if (ClassChoiceList[0] == RogueValue) { SortedClass = "Rogue"; }
-                if (ClassChoiceList[0] == PaladinValue) { SortedClass = "Paladin"; }
-                if (ClassChoiceList[0] == SorcererValue) { SortedClass = "Sorcerer";  }
-                if (ClassChoiceList[0] == WizardValue) { SortedClass = "Wizard";  }
-                if (ClassChoiceList[0] == WarlockValue) { SortedClass = "Warlock"; }
+                if (ClassChoiceList[11] == BarbarianValue) { SortedClass = "Barbarian";  }
+                if (ClassChoiceList[11] == BardValue) { SortedClass = "Bard";  }
+                if (ClassChoiceList[11] == ClericValue) { SortedClass = "Cleric"; }
+                if (ClassChoiceList[11] == DruidValue) { SortedClass = "Druid";  }
+                if (ClassChoiceList[11] == FighterValue) { SortedClass = "Fighter"; }
+                if (ClassChoiceList[11] == MonkValue) { SortedClass = "Monk";  }        
+                if (ClassChoiceList[11] == RangerValue) { SortedClass = "Ranger";  }
+                if (ClassChoiceList[11] == RogueValue) { SortedClass = "Rogue"; }
+                if (ClassChoiceList[11] == PaladinValue) { SortedClass = "Paladin"; }
+                if (ClassChoiceList[11] == SorcererValue) { SortedClass = "Sorcerer";  }
+                if (ClassChoiceList[11] == WizardValue) { SortedClass = "Wizard";  }
+                if (ClassChoiceList[11] == WarlockValue) { SortedClass = "Warlock"; }
 
                 Debug.Write(ClassChoiceList);
 
